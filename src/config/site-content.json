@@ -50,7 +50,7 @@
 		},
 		{
 			"id": "juejin",
-			"type": "juejin",
+			"type": "qq",
 			"value": "https://juejin.cn/user/2427311675422382",
 			"label": "稀土掘金",
 			"order": 2
@@ -58,7 +58,7 @@
 		{
 			"id": "email",
 			"type": "email",
-			"value": "yysuni1001@gmail.com",
+			"value": "hs@kmoon.fun",
 			"label": "",
 			"order": 1
 		}
