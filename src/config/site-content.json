@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"title": "Kmoon | Blog",
-		"description": "YYsuni 的个人博客，记录前端开发、探索、笔记。前端 UI 更新代码仓库。",
+		"description": "Kmoon 的个人博客，记录前端开发、探索、笔记。前端 UI 更新代码仓库。",
 		"username": "Kmoon"
 	},
 	"theme": {
@@ -63,7 +63,7 @@
 			"order": 1
 		}
 	],
-	"clockShowSeconds": false,
+	"clockShowSeconds": true,
 	"summaryInContent": false,
 	"isCachePem": false,
 	"hideEditButton": false,
