@@ -1,6 +1,6 @@
 {
-	"short_name": "",
-	"name": "",
+	"short_name": "blog",
+	"name": "Kmoon-Blog",
 	"start_url": ".",
 
 	"form_factor": "wide",
