@@ -2,10 +2,11 @@
   "title": "实习第一天让我手抄作文答题卡？那我选择写代码！",
   "tags": [
     "Python",
-    "pypdf"
+    "pypdf",
+		"reportLab"
   ],
   "date": "2025-11-25T18:30",
-  "summary": "因为不想手抄作文答题卡，我做了一个自动化渲染工具",
+  "summary": "因为不想手抄作文答题卡，我做了一个自动化渲染手写体工具",
   "hidden": false,
   "category": "实习日志"
 }

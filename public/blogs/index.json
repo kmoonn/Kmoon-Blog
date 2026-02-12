@@ -1,6 +1,6 @@
 [
 	{
-		"slug": "hashmap",
+		"slug": "hashmap-history",
 		"title": "HashMap 的前世今生：从 JDK 1.0 到 JDK 24 的演进之路",
 		"tags": ["Java", "HashMap"],
 		"date": "2026-02-05T21:27",
@@ -11,15 +11,15 @@
 	{
 		"slug": "render-writing-answer-sheet",
 		"title": "实习第一天让我手抄作文答题卡？那我选择写代码！",
-		"tags": ["Python", "pypdf"],
+		"tags": ["Python", "pypdf", "reportLab"],
 		"date": "2025-11-25T18:30",
-		"summary": "因为不想手抄作文答题卡，我做了一个自动化渲染工具。",
+		"summary": "因为不想手抄作文答题卡，我做了一个自动化渲染手写体工具。",
 		"hidden": false,
 		"category": "实习日志"
 	},
 	{
 		"slug": "feishu-link-preview",
-		"title": "飞书聊天框里的“链接预览”，背后发生了什么？",
+		"title": "飞书聊天框里的“链接预览”，背后到底发生了什么？",
 		"tags": ["Link Preview"],
 		"date": "2026-02-06T18:30",
 		"summary": "URL 发出去之后，飞书是如何生成预览小卡片的？",
