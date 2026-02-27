@@ -1,11 +1,14 @@
 [
   {
     "slug": "sqlbot-learning",
-    "title": "SQLBot 智能问数项目源码学习 —— Text2SQL",
-    "tags": ["SQLBot"],
+    "title": "SQLBot 智能问数项目源码学习——Text2SQL",
+    "tags": [
+      "Text2SQL",
+      "智能问数"
+    ],
     "date": "2026-02-27T11:00",
     "summary": "",
-    "cover": "",
+    "cover": "https://sqlbot.org/docs/v1/img/index/arch.png",
     "hidden": false,
     "category": "源码解读"
   },
@@ -69,13 +72,15 @@
     "category": ""
   },
   {
-      "slug": "2022",
-      "title": "2022 の 年度总结",
-      "tags": ["杂文集"],
-      "date": "2023-01-01T00:00",
-      "summary": "",
-      "cover": "/blogs/2022/e8e687b5d3abf5fa.jpeg",
-      "hidden": false,
-      "category": ""
+    "slug": "2022",
+    "title": "2022 の 年度总结",
+    "tags": [
+      "杂文集"
+    ],
+    "date": "2023-01-01T00:00",
+    "summary": "",
+    "cover": "/blogs/2022/e8e687b5d3abf5fa.jpeg",
+    "hidden": false,
+    "category": ""
   }
 ]

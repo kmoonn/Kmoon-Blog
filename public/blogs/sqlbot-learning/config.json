@@ -3,9 +3,10 @@
   "tags": [
     "Text2SQL",
     "智能问数"
-	],
+  ],
   "date": "2026-02-27T11:00",
   "summary": "",
+  "cover": "https://sqlbot.org/docs/v1/img/index/arch.png",
   "hidden": false,
   "category": "源码解读"
 }
