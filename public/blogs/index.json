@@ -1,5 +1,15 @@
 [
   {
+    "slug": "sqlbot-learning",
+    "title": "SQLBot 智能问数项目源码学习 —— Text2SQL",
+    "tags": ["SQLBot"],
+    "date": "2026-02-27T11:00",
+    "summary": "",
+    "cover": "",
+    "hidden": false,
+    "category": "源码解读"
+  },
+  {
     "slug": "feishu-link-preview",
     "title": "飞书聊天框里的“链接预览”，背后到底发生了什么？",
     "tags": [
@@ -58,14 +68,14 @@
     "hidden": false,
     "category": ""
   },
-	{
-		"slug": "2022",
-		"title": "2022 の 年度总结",
-		"tags": ["杂文集"],
-		"date": "2023-01-01T00:00",
-		"summary": "",
-		"cover": "/blogs/2022/e8e687b5d3abf5fa.jpeg",
-		"hidden": false,
-		"category": ""
-	}
+  {
+      "slug": "2022",
+      "title": "2022 の 年度总结",
+      "tags": ["杂文集"],
+      "date": "2023-01-01T00:00",
+      "summary": "",
+      "cover": "/blogs/2022/e8e687b5d3abf5fa.jpeg",
+      "hidden": false,
+      "category": ""
+  }
 ]
