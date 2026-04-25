@@ -1,165 +1,209 @@
+
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" >
+
 <meta name="generator" content="Gridea Pro 1.1.1">
-<title>入门 | Gridea Pro</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1777106800">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<title>入门 | Kmoon の Blog</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="/favicon.ico?v=1777107734">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="入门 | Gridea Pro - Atom Feed" href="/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="Welcome to Gridea Pro" />
-<meta name="description" content="Welcome to Gridea Pro">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  <meta name="description" content="Welcome to Kmoon blog.">
 <link rel="canonical" href="https://kmoon.fun/tag/getting-started/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Gridea Pro","url":"https://kmoon.fun","description":"Welcome to Gridea Pro","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://kmoon.fun/search?q={search_term_string}"}}</script>
-<meta property="og:title" content="Gridea Pro">
-<meta property="og:description" content="Welcome to Gridea Pro">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kmoon の Blog","url":"https://kmoon.fun","description":"Welcome to Kmoon blog.","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://kmoon.fun/search?q={search_term_string}"}}</script>
+<meta property="og:title" content="Kmoon の Blog">
+<meta property="og:description" content="Welcome to Kmoon blog.">
 <meta property="og:url" content="https://kmoon.fun/tag/getting-started/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Gridea Pro">
+<meta property="og:site_name" content="Kmoon の Blog">
 <meta property="og:image" content="/images/avatar.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://kmoon.fun/tag/getting-started/">
-<meta name="twitter:title" content="Gridea Pro">
-<meta name="twitter:description" content="Welcome to Gridea Pro">
+<meta name="twitter:title" content="Kmoon の Blog">
+<meta name="twitter:description" content="Welcome to Kmoon blog.">
 <meta name="twitter:image" content="/images/avatar.png">
 </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://kmoon.fun">
+        <img class="avatar" src="https://kmoon.fun/images/avatar.png?v=1777107734" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://kmoon.fun">
+        <h1 class="site-title">Kmoon の Blog</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
 
-<body>
-    <div class="main">
-        <div class="main-content">
-            
-<div class="site-header">
-    <a href="/">
-        <img class="avatar" src="/images/avatar.png?v=1777106800" alt="">
-    </a>
-    <h1 class="site-title">
-        Gridea Pro
-    </h1>
-    <p class="site-description">
-        Welcome to Gridea Pro
-    </p>
-    <div class="menu-container">
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
         
-        
-        <a href="/" class="menu">
+          <a href="/" class="menu purple-link">
             首页
-        </a>
+          </a>
         
+      
         
-        
-        <a href="/post" class="menu">
+          <a href="/post" class="menu purple-link">
             博客
-        </a>
+          </a>
         
+      
         
-        
-        <a href="/memos" class="menu">
+          <a href="/memos" class="menu purple-link">
             闪念
-        </a>
+          </a>
         
+      
         
-        
-        <a href="/archives" class="menu">
+          <a href="/archives" class="menu purple-link">
             归档
-        </a>
+          </a>
         
+      
         
-        
-        <a href="/tags" class="menu">
+          <a href="/tags" class="menu purple-link">
             标签
-        </a>
+          </a>
         
+      
         
-        
-        <a href="/links" class="menu">
+          <a href="/links" class="menu purple-link">
             友链
-        </a>
+          </a>
         
+      
         
-        
-        <a href="/post/about" class="menu">
+          <a href="/post/about" class="menu purple-link">
             关于
-        </a>
+          </a>
         
+      
         
-        
-        <a href="https://resume.kmoon.fun" class="menu">
+          <a href="https://resume.kmoon.fun" class="menu purple-link">
             简历
-        </a>
+          </a>
         
-        
+      
     </div>
-    <div class="social-container">
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 入门
+          </h2> 
+        </div>
+
         
+<section class="post-item">
+    <div class="content">
+      <a href="/post/quick-start/">
+        <h2 class="post-title">Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定</h2>
+      </a>
+      <div class="post-abstract">
+        <p>这篇指南会带你一步一步熟悉 Gridea Pro 的界面和操作，从写第一篇文章到把博客发布到互联网上。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2026-04-25</span>
         
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tag/gridea-pro/">
+                Gridea Pro
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tag/getting-started/">
+                入门
+                
+              </a>
+            
+          </span>
         
-        
-        
+      </div>
     </div>
-</div>
-
-            <div class="current-tag-container">
-                <h2 class="title">
-                    标签：# 入门
-                </h2>
-            </div>
-            
-<div class="post-container">
     
-    <article class="post">
-        <a href="/post/quick-start/">
-            <h2 class="post-title">Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定</h2>
-        </a>
-        <div class="post-info">
-            <span>
-                2026-04-25
-            </span>
-            <span>
-                8 分钟阅读
-            </span>
-            
-            <a href="/tag/gridea-pro/" class="post-tag">
-                # Gridea Pro
-            </a>
-            
-            <a href="/tag/getting-started/" class="post-tag">
-                # 入门
-            </a>
-            
-        </div>
-        
-        <div class="post-abstract">
-            <p>这篇指南会带你一步一步熟悉 Gridea Pro 的界面和操作，从写第一篇文章到把博客发布到互联网上。</p>
+  </section>
 
-        </div>
-    </article>
-    
-</div>
 
-            
 <div class="pagination-container">
-    
-    
+  
+  
 </div>
 
-            
-<div class="site-footer">
-    Powered by Gridea Pro
-    <a class="rss" href="/atom.xml" target="_blank">
-        <i class="ri-rss-line"></i> RSS
-    </a>
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">Welcome to Kmoon blog.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by Kmoon | <a class="rss" href="/feed.xml" target="_blank">RSS</a>
 </div>
 
-        </div>
+
     </div>
-<script>console.log("\n%c ✦ Gridea Pro v1.1.1 %c · Theme: inotes v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
-</body>
+    <script type="application/javascript">
 
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  <script>console.log("\n%c ✦ Gridea Pro v1.1.1 %c · Theme: fly v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
 </html>
