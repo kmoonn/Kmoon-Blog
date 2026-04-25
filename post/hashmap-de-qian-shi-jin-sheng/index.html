@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no, email=no, address=no">
 
     <meta name="generator" content="Gridea Pro 1.1.1">
-    <title>标签 | Kmoon の Blog</title>
+    <title>HashMap 的前世今生 | Kmoon の Blog</title>
 
     
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -249,25 +249,26 @@
     
 
     
-<meta name="description" content="Welcome to Kmoon blog.">
-<link rel="canonical" href="https://kmoon.fun/tags/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kmoon の Blog","url":"https://kmoon.fun","description":"Welcome to Kmoon blog.","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://kmoon.fun/search?q={search_term_string}"}}</script>
-<meta property="og:title" content="Kmoon の Blog">
-<meta property="og:description" content="Welcome to Kmoon blog.">
-<meta property="og:url" content="https://kmoon.fun/tags/">
-<meta property="og:type" content="website">
+<meta name="description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。 它既是日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。">
+<link rel="canonical" href="https://kmoon.fun/post/hashmap-de-qian-shi-jin-sheng/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"HashMap 的前世今生","url":"https://kmoon.fun/post/hashmap-de-qian-shi-jin-sheng/","description":"在 Java 后端的世界里，HashMap 是一个绕不开的类。 它既是日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。","datePublished":"2026-02-25T17:00:00+08:00","dateModified":"2026-02-25T17:00:00+08:00","author":{"@type":"Person","name":"Kmoon の Blog"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"Kmoon の Blog"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://kmoon.fun","name":"Kmoon の Blog","position":1},{"@type":"ListItem","item":"https://kmoon.fun/post/hashmap-de-qian-shi-jin-sheng/","name":"HashMap 的前世今生","position":2}]}</script>
+<meta property="og:title" content="HashMap 的前世今生">
+<meta property="og:description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。 它既是日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。">
+<meta property="og:url" content="https://kmoon.fun/post/hashmap-de-qian-shi-jin-sheng/">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Kmoon の Blog">
 <meta property="og:image" content="/images/avatar.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://kmoon.fun/tags/">
-<meta name="twitter:title" content="Kmoon の Blog">
-<meta name="twitter:description" content="Welcome to Kmoon blog.">
+<meta name="twitter:url" content="https://kmoon.fun/post/hashmap-de-qian-shi-jin-sheng/">
+<meta name="twitter:title" content="HashMap 的前世今生">
+<meta name="twitter:description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。 它既是日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。">
 <meta name="twitter:image" content="/images/avatar.png">
 </head>
 
-<body>
+    <body>
 
-<script>
+        <script>
     (function () {
         const getSystemTheme = () => {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -327,35 +328,166 @@
 </header>
 <!-- <a href="#" id="back-to-top" style="display: inline;"> ^ </a> -->
 
-<article class="mod-post mod-post__type-post">
+            <article class="mod-post mod-post__type-post">
+                <header>
+                    <h1 class="mod-post__title">
+                        HashMap 的前世今生
+                    </h1>
+                </header>
 
-    <header>
-        <h1 class="mod-post__title">
-            标签
-        </h1>
-    </header>
-
-    <div class="mod-post__entry wzulli">
-
-        <div class="tags">
-            
-                <ul class="tags-list">
-                    
-                        <li>
-                            <a href="/tag/java/" rel="tag" class="size-10" title="1 个话题">
-                                # Java <span>(1)</span>
+                <div class="mod-post__meta">
+                    <time datetime="2026-02-25">
+                        2026-02-25
+                    </time> • 3 分钟阅读 •
+                        
+                            <a href="/tag/java/">
+                                Java
                             </a>
-                        </li>
+                            
+                                    
+                </div>
+
+
+
+                <div class="mod-post__entry wzulli">
                     
-                </ul>
+                            <p>在 Java 后端的世界里，HashMap 是一个绕不开的类。</p>
+<p>它既是日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。</p>
+<!-- more -->
+<p>本文将从 JDK 1.0 到 JDK 24，回顾 HashMap 的设计演进，试图回答三个问题：</p>
+<ul>
+<li>HashMap 一开始是如何设计的？</li>
+<li>为什么 JDK 1.8 对它进行了“重构级”改造？</li>
+<li>HashMap 背后体现了怎样的工程思想？</li>
+</ul>
+<h1 id="-hashmap-">为什么 HashMap 如此重要？</h1>
+<p>HashMap 的重要性不在于“会不会用”，而在于：</p>
+<ul>
+<li>
+<p>它综合了 数组、链表、红黑树 等经典数据结构</p>
+</li>
+<li>
+<p>它体现了 时间与空间的权衡</p>
+</li>
+<li>
+<p>它明确区分了 单线程容器 与 并发容器 的设计边界</p>
+</li>
+<li>
+<p>它的演进几乎映射了 Java 集合框架的成熟过程</p>
+</li>
+</ul>
+<p>理解 HashMap，往往是 Java 开发者从“API 使用者”走向“底层理解者”的一道分水岭。</p>
+<h1 id="jdk-12--17-hashmap">JDK 1.2 ~ 1.7：草莽时代的 HashMap</h1>
+<p>JDK 1.0/1.1 只有 Hashtable，HashMap 是在 JDK 1.2 的 Collection Framework 中引入的。</p>
+<h2 id="heading">底层结构</h2>
+<p>早期 HashMap 的底层结构非常直接：<strong>数组 + 链表</strong></p>
+<h2 id="heading-1">关键参数</h2>
+<h2 id="hash-">Hash 计算方式</h2>
+<h2 id="heading-2">元素插入方式：头插法</h2>
+<ul>
+<li>JDK 1.2</li>
+</ul>
+<pre><code class="language-java">package java.util;
+import java.io.*;
+
+public class HashMap&lt;K, V&gt; 
+        extends AbstractMap&lt;K, V&gt; 
+        implements Map&lt;K, V&gt;, Cloneable, Serializable 
+{
+    static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
+    static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;
+    static final float DEFAULT_LOAD_FACTOR = 0.75f;
+    static final Entry&lt;?,?&gt;[] EMPTY_TABLE = {};
+    transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;
+    transient int size;
+    final float loadFactor;
+    transient int modCount;
+    static final int ALTERNATIVE_HASHING_THRESHOLD_DEFAULT = Integer.MAX_VALUE;
+}
+</code></pre>
+<ul>
+<li>JDK 1.0</li>
+</ul>
+<pre><code class="language-java">
+</code></pre>
+<h1 id="jdk-18hashmap-">JDK 1.8：HashMap 的分水岭</h1>
+<p>如果说 HashMap 的历史只有一个转折点，那一定是 JDK1.8。</p>
+<p>这一版本几乎重写了 HashMap 的核心逻辑。</p>
+<h2 id="heading-3">底层结构升级：引入红黑树</h2>
+<h2 id="heading-4">插入方式改变：尾插法</h2>
+<h2 id="-hash-">更合理的 Hash 扰动函数</h2>
+<h2 id="resize-">resize 机制的重大优化</h2>
+<h1 id="jdk-9--jdk-24">JDK 9 ~ JDK 24：稳定后的演进期</h1>
+<p>在 JDK8 之后，HashMap 的核心设计已经趋于稳定。</p>
+<p>可以认为：JDK8 定义了现代 HashMap 的最终形态。</p>
+<h1 id="hashmap-">HashMap 背后的设计哲学</h1>
+<p>回顾 HashMap 的演进，可以总结出几条非常典型的工程取舍。</p>
+<h2 id="1-">1. 用空间换时间</h2>
+<p>负载因子 0.75</p>
+<p>主动扩容</p>
+<p>降低冲突概率</p>
+<h2 id="2---">2. 为单线程 / 低并发场景优化</h2>
+<p>HashMap 明确不是线程安全的</p>
+<p>并发问题交由 ConcurrentHashMap 解决</p>
+<p>职责清晰，避免过度设计</p>
+<h3 id="3-">3. 常规情况高效，极端情况兜底</h3>
+<p>链表应对大多数场景</p>
+<p>红黑树兜底最坏复杂度 O(log n)</p>
+
+                </div>
+
+            </article>
+
+
             
-        </div>
+                
+	<div class="mod-post__foot">
+	 文章标签: 
+     
+        <a href="/tag/java/">Java</a>
+     
+     </br>
+	</div>
 
-    </div>
+                    
 
-</article>
+                        <div class="mod-post__poster">
+                        </div>
 
-<footer id="footer" class="footer">
+                        </div>
+
+                        
+                            
+<br>
+
+<div style="margin-bottom: 10px;">
+    上一篇 : 已经是第一篇文章了~
+</div>
+
+
+
+<div>
+    下一篇 : 没有下一篇文章了~
+</div>
+
+
+</div>	
+
+                                
+
+                                    
+                                        <!-- Reading Progress Component -->
+<div class="reading-progress-container">
+  <span class="reading-label">阅读进度</span>
+  <span class="reading-value">0%</span>
+  <svg class="progress-ring" viewBox="0 0 24 24">
+    <!-- Background Circle -->
+    <circle class="progress-ring__circle-bg" stroke-width="3" fill="transparent" r="10" cx="12" cy="12" />
+    <!-- Progress Circle -->
+    <circle class="progress-ring__circle" stroke-width="3" fill="transparent" r="10" cx="12" cy="12" />
+  </svg>
+</div>
+                                            <footer id="footer" class="footer">
     <nav>
         
             
@@ -404,6 +536,8 @@
 
 
 
-<script>console.log("\n%c ✦ Gridea Pro v1.1.1 %c · Theme: amore v1.1.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+
+    <script>console.log("\n%c ✦ Gridea Pro v1.1.1 %c · Theme: amore v1.1.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
 </body>
-</html>
+
+    </html>
