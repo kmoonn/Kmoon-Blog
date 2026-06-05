@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Kmoon Blog</title>
+		<link>https://example.org/</link>
+		<description>Recent content on Kmoon Blog</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+			<copyright>Copyright © 2020, Kmoon.</copyright>
+		
+		
+			<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>

@@ -1,0 +1,11 @@
+baseURL = 'https://example.org/'
+locale = 'zh-CN'
+
+title = 'Kmoon Blog'
+theme = 'hugo-bearblog'
+author = "Kmoon"
+
+copyright = "Copyright © 2020, Kmoon."
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
