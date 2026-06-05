@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Home on Kmoon Blog</title>
-		<link>http://localhost:1313/</link>
-		<description>Recent content in Home on Kmoon Blog</description>
+		<title>Blog on Kmoon Blog</title>
+		<link>http://localhost:1313/blog/</link>
+		<description>Recent content in Blog on Kmoon Blog</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
 		
@@ -12,36 +12,15 @@
 			<copyright>Copyright © 2020, Kmoon.</copyright>
 		
 		
-			<lastBuildDate>Fri, 05 Jun 2026 22:16:07 +0800</lastBuildDate>
+			<lastBuildDate>Fri, 05 Jun 2026 21:32:42 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>You Heart</title>
-				<link>http://localhost:1313/essay/you-heart/</link>
-				<pubDate>Fri, 05 Jun 2026 22:16:07 +0800</pubDate>
-				<guid>http://localhost:1313/essay/you-heart/</guid>
-				<description>&lt;p&gt;This is a page about »You Heart«.&lt;/p&gt;</description>
-			</item>
+			<atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>RAG Semantic Gap</title>
 				<link>http://localhost:1313/rag-semantic-gap/</link>
 				<pubDate>Fri, 05 Jun 2026 21:32:42 +0800</pubDate>
 				<guid>http://localhost:1313/rag-semantic-gap/</guid>
 				<description>&lt;p&gt;本文讨论 RAG 如何解决语义鸿沟（Semantic Gap）的问题，围绕 RAG 整个流程逐个展开，从用户查询、向量化、检索、知识库各阶段。&lt;/p&gt;&#xA;&lt;h2 id=&#34;查询层&#34;&gt;查询层&lt;/h2&gt;&#xA;&lt;p&gt;用户的原始提问不适合直接拿去做向量检索，可以先把它变成更适合检索的形式。&lt;/p&gt;&#xA;&lt;h3 id=&#34;查询改写query-rewriting&#34;&gt;查询改写（Query Rewriting）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;假设文档嵌入hypothetical-document-embeddings-hyde&#34;&gt;假设文档嵌入（Hypothetical Document Embeddings, HyDE）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;多查询扩展multi-query&#34;&gt;多查询扩展（Multi-Query）&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0e84b5;font-weight:bold&#34;&gt;MultiQueryRetriever&lt;/span&gt;(BaseRetriever):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;知识库层&#34;&gt;知识库层&lt;/h2&gt;&#xA;&lt;h3 id=&#34;文档切分策略&#34;&gt;文档切分策略&lt;/h3&gt;&#xA;&lt;h3 id=&#34;层次化索引hierarchical-indexing&#34;&gt;层次化索引（Hierarchical Indexing）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;文档增强document-enrichment&#34;&gt;文档增强（Document Enrichment）&lt;/h3&gt;&#xA;&lt;p&gt;HyDE 的反向操作&lt;/p&gt;&#xA;&lt;h2 id=&#34;检索层&#34;&gt;检索层&lt;/h2&gt;&#xA;&lt;p&gt;有了适合检索的用户查询，需要通过检索的方式去知识库检索。&lt;/p&gt;&#xA;&lt;h3 id=&#34;向量检索&#34;&gt;向量检索&lt;/h3&gt;&#xA;&lt;h3 id=&#34;关键词检索&#34;&gt;关键词检索&lt;/h3&gt;&#xA;&lt;p&gt;BM25&lt;/p&gt;&#xA;&lt;h3 id=&#34;混合检索&#34;&gt;混合检索&lt;/h3&gt;&#xA;&lt;h2 id=&#34;重排&#34;&gt;重排&lt;/h2&gt;&#xA;&lt;h3 id=&#34;rrfreciprocal-rank-fusion&#34;&gt;RRF（Reciprocal Rank Fusion）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;重排序模型reranker&#34;&gt;重排序模型（Reranker）&lt;/h3&gt;&#xA;&lt;h2 id=&#34;embedding-模型&#34;&gt;Embedding 模型&lt;/h2&gt;&#xA;&lt;h3 id=&#34;领域微调fine-tuning&#34;&gt;领域微调（Fine-tuning）&lt;/h3&gt;&#xA;&lt;h2 id=&#34;组合拳&#34;&gt;组合拳&lt;/h2&gt;</description>
-			</item>
-			<item>
-				<title>About</title>
-				<link>http://localhost:1313/about/</link>
-				<pubDate>Fri, 05 Jun 2026 21:25:11 +0800</pubDate>
-				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;p&gt;This is a page about »About«.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Resume</title>
-				<link>http://localhost:1313/resume/</link>
-				<pubDate>Fri, 05 Jun 2026 21:23:36 +0800</pubDate>
-				<guid>http://localhost:1313/resume/</guid>
-				<description>&lt;p&gt;This pdf version is &lt;a href=&#34;https://resume.kmoon.fun&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;h2 id=&#34;internship&#34;&gt;Internship&lt;/h2&gt;</description>
 			</item>
 			<item>
 				<title>LLM Pre Training</title>

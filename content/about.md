@@ -1,6 +1,6 @@
 +++
-title = "{{ replace .Name "-" " " | title }}"
-date = "{{ .Date }}"
+title = "About"
+date = "2026-06-05T21:25:11+08:00"
 
 #
 # Set menu to "main" to add this page to
@@ -16,7 +16,7 @@ menu = "main"
 #
 # tags are optional
 #
-# tags = [{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}"{{ printf "%s" $term }}",{{ end }}{{ end }}]
+# tags = ["markdown","syntax",]
 +++
 
-This is a page about »{{ replace .Name "-" " " | title }}«.
+This is a page about »About«.
