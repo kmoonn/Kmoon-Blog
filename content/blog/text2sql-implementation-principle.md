@@ -7,7 +7,7 @@ date = "2025-12-10T21:40:24+08:00"
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["hashmap","java","markdown","rag","semantic gap","syntax",]
+tags = ["text2sql",]
 +++
 
 This is a page about »Text2sql Implementation Principle«.

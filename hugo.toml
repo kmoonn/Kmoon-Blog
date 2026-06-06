@@ -1,9 +1,9 @@
 # Base URL used when generating links to your pages
 # Set to the URL for your site
-baseURL = "https://blog.kmoon.fun"
+baseURL = "https://blog.kmoon.fun/"
 
 # The name of this wonderful theme ;-).
-theme = 'hugo-bearblog'
+theme = "hugo-bearneo"
 
 # Basic metadata configuration for your blog.
 title = "Kmoon Blog"
@@ -23,7 +23,7 @@ tags = "/blog/:slug"
 
 [params]
 # The "description" of your website. This is used in the meta data of your generated html.
-description = "Hugo + Bear = :heart:"
+description = "Kmoon Blog"
 
 # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
 # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
@@ -56,6 +56,63 @@ title = "Kmoon Blog"
 # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 # dateFormat = "2006-01-02"
 
+# Copyright notice text, to be applied to RSS and the bottom of the page.
+copyright = "Copyright © 2020-2026. Kmoon."
+
+# 博客文章列表是否按年份分组，Bear Blog 样式为 false
+# Is the list of blog articles grouped by year, the Bear Blog style is false.
+groupByYear = true
+
+# 博客文章列表是否显示文章数量（只统计未被隐藏的文章），Bear Blog 样式为 false
+# The blog post list does not display the number of articles (only counts the articles that have not been hidden), the Bear Blog style is false.
+showPostCount = true
+
+# 博客文章列表页是否启用文章搜索功能
+# Is the article search function enabled on the blog article list page?
+postSearch = false
+
+# 文章页是否启用 TOC
+# Article page whether enabled TOC?
+toc = true
+
+# 文章页是否启用图片放大功能
+# Article page whether enabled image zoom?
+imageZoom = true
+
+[params.footer]
+# 是否隐藏版权说明文案，若不配置，默认 false
+# Whether to hide the copyright notice text, if not configured, the default is false.
+hideCopyright = false
+# 是否隐藏 Sitemap 链接，不隐藏有利于 SEO，若不配置，默认 false
+# Whether to hide the Sitemap link, not hiding is beneficial for SEO, if not configured, the default is false.
+hideSitemap = true
+# 是否隐藏 made-with-line，若不配置，默认 false，你可以关闭它，但如果你不这样做，我将非常感激 :-)
+# Whether to hide made-with-line, if not configured, the default is false, you can turn it off, but if you don't, I will be very grateful :-)
+hideMadeWithLine = true
+# 是否隐藏 RSS 和 Email 链接，若不配置，默认 false
+# Whether to hide RSS and Email links, if not configured, the default is false.
+hideRSSAndEmail = true
+
+[params.RSS]
+# 是否启用 RSS，若不配置，默认 true
+# Is RSS enabled? If not configured, the default is true.
+enableRSS = false
+# 生成的 RSS 文件中文章数量限制，若不配置，即不设限制
+# The article quantity limit in the generated RSS file, if not configured, no limit is set.
+pageLimit = 10
+# Follow App 的 feedId 和 userId，用于在 Follow App 中 Claim 你的博客，参见：https://rokcso.com/p/follow-claim-feed/
+# Follow App's feedId and userId are used to claim your blog in Follow App, see: https://rokcso.com/p/follow-claim-feed/.
+followFeedId = "00000000000000000"
+followUserId = "00000000000000000"
+
+[params.author]
+# 若不配置，默认空
+# If not configured, default is empty
+name = "Kmoon"
+# 若不配置，默认空
+# If not configured, default is empty
+email = "hushan@kmoon.fun"
+
 # Configure markup highlighter to match "Bearblog" aesthetics, see
 # https://gohugo.io/configuration/markup/#highlight
 [markup]
@@ -64,3 +121,10 @@ style = 'friendly'
 lineNos = true
 lineNumbersInTable = false
 codeFences = true
+# 配置 TOC 渲染规则
+# Configure TOC rendering rules.
+[markup.tableOfContents]
+# 从 h2 开始到 h3 结束，后续的 h 等级将不会被渲染
+# From h2 to h3, subsequent h levels will not be rendered.
+startLevel = 2
+endLevel = 3

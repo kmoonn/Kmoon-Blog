@@ -7,7 +7,7 @@ date = "2026-04-25T21:39:28+08:00"
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["hashmap","java","markdown","rag","semantic gap","syntax",]
+tags = ["Agent"]
 +++
 
 This is a page about »5 Core Elements of Agent«.

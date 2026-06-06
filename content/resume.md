@@ -14,8 +14,4 @@ menu = "main"
 # tags = ["markdown","syntax",]
 +++
 
-This pdf version is [here](https://resume.kmoon.fun).
-
-## Education
-
-## Internship
+This online PDF version [here](https://resume.kmoon.fun).

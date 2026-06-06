@@ -7,7 +7,7 @@ date = "2026-04-05T21:45:40+08:00"
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["hashmap","java","markdown","rag","semantic gap","syntax",]
+tags = ["docker","K8s",]
 +++
 
 This is a page about »Docker vs K8s«.

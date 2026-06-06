@@ -1,0 +1,132 @@
+{{/* 根据页面内容生成目录 */}}
+{{ if and .TableOfContents (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+<aside class="toc-nav" role="navigation" aria-label="目录">
+    {{ .TableOfContents }}
+</aside>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tocNav = document.querySelector('.toc-nav');
+        if (!tocNav) return;
+
+        const tocLinks = Array.from(tocNav.querySelectorAll('a'));
+        if (!tocLinks.length) return;
+
+        // 建立 id -> link 映射，并缓存去重后的 headings
+        const idToLink = new Map();
+        const headings = [];
+        const seen = new Set();
+
+        for (const link of tocLinks) {
+            const hash = link.hash || link.getAttribute('href');
+            if (!hash || hash.charAt(0) !== '#') continue;
+            const id = decodeURIComponent(hash.slice(1));
+            idToLink.set(id, link);
+
+            if (!seen.has(id)) {
+                const h = document.getElementById(id);
+                if (h) {
+                    headings.push(h);
+                    seen.add(id);
+                }
+            }
+        }
+
+        if (!headings.length) return;
+
+        const OFFSET = 100; // 与原逻辑一致的偏移阈值
+
+        // 仅对差异进行 class 更新，避免每次全量清空
+        let currentActive = null;
+        let currentChain = [];
+
+        function buildChainFromLink(link) {
+            const chain = [];
+            if (!link) return chain;
+            chain.push(link);
+            let li = link.closest('li');
+            while (li) {
+                const parentLi = li.parentElement ? li.parentElement.closest('li') : null;
+                if (parentLi) {
+                    const parentLink = parentLi.querySelector('a');
+                    if (parentLink) chain.push(parentLink);
+                }
+                li = parentLi;
+            }
+            return chain;
+        }
+
+        function applyActiveChain(newLink) {
+            if (newLink === currentActive) return;
+            const newChain = buildChainFromLink(newLink);
+
+            // 移除旧链上的 active
+            for (const el of currentChain) {
+                if (!newChain.includes(el)) el.classList.remove('active');
+            }
+            // 新链上添加 active
+            for (const el of newChain) {
+                if (!el.classList.contains('active')) el.classList.add('active');
+            }
+
+            currentActive = newLink || null;
+            currentChain = newChain;
+        }
+
+        // 点击使用事件委托
+        tocNav.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (!link || !tocNav.contains(link)) return;
+
+            const hash = link.hash || link.getAttribute('href');
+            if (!hash || hash.charAt(0) !== '#') return;
+
+            const id = decodeURIComponent(hash.slice(1));
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({
+                behavior: reduceMotion ? 'auto' : 'smooth',
+                block: 'start'
+            });
+
+            // 立即更新一次，提升交互反馈
+            applyActiveChain(link);
+        });
+
+        // 滚动时更新当前激活链接（从后往前找第一个 top <= OFFSET）
+        function updateActiveLink() {
+            let linkToActivate = null;
+            for (let i = headings.length - 1; i >= 0; i--) {
+                const top = headings[i].getBoundingClientRect().top;
+                if (top <= OFFSET) {
+                    linkToActivate = idToLink.get(headings[i].id) || null;
+                    break;
+                }
+            }
+            applyActiveChain(linkToActivate);
+        }
+
+        // rAF 节流 + passive 监听
+        let ticking = false;
+        function onScrollOrResize() {
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    updateActiveLink();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+        // 初始化
+        updateActiveLink();
+    });
+</script>
+{{ end }}
