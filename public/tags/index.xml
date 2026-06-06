@@ -1,17 +1,99 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Tags on Kmoon Blog</title>
-		<link>https://example.org/tags/</link>
-		<description>Recent content in Tags on Kmoon Blog</description>
-		<generator>Hugo</generator>
-		<language>zh-CN</language>
-		
-		
-		
-			<copyright>Copyright © 2020, Kmoon.</copyright>
-		
-		
-			<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
-	</channel>
+  <channel>
+    <title>Tags on Kmoon Blog</title>
+    <link>https://blog.kmoon.fun/tags/</link>
+    <description>Recent content in Tags on Kmoon Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+      <managingEditor>hushan@kmoon.fun (Kmoon)</managingEditor>
+    
+    
+      <webMaster>hushan@kmoon.fun (Kmoon)</webMaster>
+    
+    
+    <copyright>Copyright © 2020-2026. Kmoon.</copyright>
+    
+    
+    <lastBuildDate>Fri, 05 Jun 2026 21:32:42 +0800</lastBuildDate>
+    
+    
+    <follow_challenge>
+        <feedId>00000000000000000</feedId>
+        <userId>00000000000000000</userId>
+    </follow_challenge>
+    
+    <atom:link href="https://blog.kmoon.fun/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RAG</title>
+      <link>https://blog.kmoon.fun/blog/rag/</link>
+      <pubDate>Fri, 05 Jun 2026 21:32:42 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Semantic Gap</title>
+      <link>https://blog.kmoon.fun/blog/semantic-gap/</link>
+      <pubDate>Fri, 05 Jun 2026 21:32:42 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/semantic-gap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://blog.kmoon.fun/blog/llm/</link>
+      <pubDate>Wed, 20 May 2026 21:41:56 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pre Training</title>
+      <link>https://blog.kmoon.fun/blog/pre-training/</link>
+      <pubDate>Wed, 20 May 2026 21:41:56 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/pre-training/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://blog.kmoon.fun/blog/security/</link>
+      <pubDate>Fri, 15 May 2026 21:45:11 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>https://blog.kmoon.fun/blog/ssh/</link>
+      <pubDate>Fri, 15 May 2026 21:45:11 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Knowledge Editing</title>
+      <link>https://blog.kmoon.fun/blog/knowledge-editing/</link>
+      <pubDate>Wed, 13 May 2026 21:46:11 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/knowledge-editing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fine Tuning</title>
+      <link>https://blog.kmoon.fun/blog/fine-tuning/</link>
+      <pubDate>Sat, 09 May 2026 21:41:34 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/fine-tuning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Agents</title>
+      <link>https://blog.kmoon.fun/blog/agents/</link>
+      <pubDate>Sat, 25 Apr 2026 21:39:28 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/agents/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://blog.kmoon.fun/blog/docker/</link>
+      <pubDate>Sun, 05 Apr 2026 21:45:40 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>https://blog.kmoon.fun/blog/docker/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

@@ -1,5 +1,5 @@
 +++
-title = "Link Preview Technical Principles"
+title = "Link Preview"
 date = "2026-01-20T21:43:06+08:00"
 
 #
@@ -10,4 +10,4 @@ date = "2026-01-20T21:43:06+08:00"
 tags = ["Link Preview",]
 +++
 
-This is a page about »Link Preview Technical Principles«.
+This article explains how link preview systems fetch pages, extract metadata, cache results, and render rich preview cards.

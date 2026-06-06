@@ -1,34 +1,40 @@
-{{ if ne .Site.Params.Footer.hideRSSAndEmail true }}
-<!-- Enable RSS and email exists -->
-{{ if and ( ne .Site.Params.RSS.enableRSS false ) .Site.Params.Author.email }}
-Subscribe via <a href="/index.xml">RSS</a> or just <a href="mailto:{{ .Site.Params.Author.email }}">say hello</a>.
-<br />
+{{ $footer := site.Params.footer }}
+{{ $rssEnabled := ne site.Params.RSS.enableRSS false }}
+{{ $authorEmail := "" }}
+{{ with site.Params.author }}
+  {{ if reflect.IsMap . }}
+    {{ with .email }}
+      {{ $authorEmail = . }}
+    {{ end }}
+  {{ end }}
 {{ end }}
-<!-- Enable RSS and email does not exists -->
-{{ if and ( ne .Site.Params.RSS.enableRSS false ) (not .Site.Params.Author.email) }}
-Subscribe via <a href="/index.xml">RSS</a>.
+
+{{ if ne $footer.hideRSSAndEmail true }}
+  {{ if and $rssEnabled $authorEmail }}
+Subscribe via <a href="{{ "index.xml" | relURL }}">RSS</a> or just <a href="mailto:{{ $authorEmail }}">say hello</a>.
 <br />
-{{ end }}
-<!-- Do not enable RSS and email exists -->
-{{ if and ( ne .Site.Params.RSS.enableRSS true ) .Site.Params.Author.email }}
-Say hello via <a href="mailto:{{ .Site.Params.Author.email }}">email</a>.
+  {{ else if $rssEnabled }}
+Subscribe via <a href="{{ "index.xml" | relURL }}">RSS</a>.
 <br />
-{{ end }}
+  {{ else if $authorEmail }}
+Say hello via <a href="mailto:{{ $authorEmail }}">email</a>.
+<br />
+  {{ end }}
 {{ end }}
 
 <!-- Made with line -->
-{{ if ne .Site.Params.Footer.hideMadeWithLine true }}Made with
+{{ if ne $footer.hideMadeWithLine true }}Made with
 <a href="https://github.com/rokcso/hugo-bearneo/">Hugo Bear Neo</a>.
 <br />
 {{ end }}
 
 <!-- Sitemap -->
-{{ if ne .Site.Params.Footer.hideCopyright true }}
+{{ if ne $footer.hideCopyright true }}
 Copyright © 2020 – 2026 · Powered by
 <a href="https://github.com/kmoonn" target="_blank" rel="noopener noreferrer" aria-label="Kmoon on GitHub">
     Kmoon
 </a>
 {{ end }}
-{{ if ne .Site.Params.Footer.hideSitemap true }}
-🗺️ <a href="/sitemap.xml">Sitemap</a>.
+{{ if ne $footer.hideSitemap true }}
+🗺️ <a href="{{ "sitemap.xml" | relURL }}">Sitemap</a>.
 {{ end }}

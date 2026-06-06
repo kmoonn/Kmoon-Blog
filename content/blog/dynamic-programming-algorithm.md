@@ -1,5 +1,5 @@
 +++
-title = "Dynamic Programming Algorithm"
+title = "Dynamic Programming"
 date = "2025-11-10T21:47:16+08:00"
 
 #
@@ -7,7 +7,7 @@ date = "2025-11-10T21:47:16+08:00"
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["dp","algo",]
+tags = ["Dynamic Programming","Algorithms",]
 +++
 
-This is a page about »Dynamic Programming Algorithm«.
+This article introduces dynamic programming through state design, transition equations, and the common patterns behind classic DP problems.

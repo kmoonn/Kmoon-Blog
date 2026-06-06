@@ -14,4 +14,6 @@ menu = "main"
 # tags = ["markdown","syntax",]
 +++
 
-This online PDF version [here](https://resume.kmoon.fun).
+This page is a short landing page for my latest resume.
+
+You can view the full PDF version [here](https://resume.kmoon.fun).

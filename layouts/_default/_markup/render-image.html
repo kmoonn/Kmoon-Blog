@@ -1,16 +1,21 @@
 {{ $isHomeHero := and $.Page.IsHome (eq .Destination "/images/flowers.gif") }}
+{{ $imageID := printf "img-%s" (substr (md5 .Destination) 0 8) }}
+{{ $zoomLabel := "放大图片" }}
+{{ with .Text }}
+  {{ $zoomLabel = printf "放大图片：%s" . }}
+{{ end }}
 <figure
     class="image-caption{{ if and $.Page.Site.Params.imageZoom (not $isHomeHero) }} image-zoom-container{{ end }}{{ if $isHomeHero }} home-hero-image{{ end }}"
 >
     {{ if and $.Page.Site.Params.imageZoom (not $isHomeHero) }}
     <input
         type="checkbox"
-        id="img-{{ substr (md5 .Destination) 0 8 }}"
+        id="{{ $imageID }}"
         class="image-zoom-toggle"
-        aria-label="放大图片：{{ .Text }}"
+        aria-label="{{ $zoomLabel }}"
     />
     <label
-        for="img-{{ substr (md5 .Destination) 0 8 }}"
+        for="{{ $imageID }}"
         class="image-zoom-label"
     >
         <img
@@ -22,7 +27,7 @@
     </label>
     <!-- 添加overlay元素用于显示放大的图片 -->
     <label
-        for="img-{{ substr (md5 .Destination) 0 8 }}"
+        for="{{ $imageID }}"
         class="image-zoom-overlay"
     >
         <img

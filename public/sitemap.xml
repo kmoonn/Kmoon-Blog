@@ -21,6 +21,9 @@
     <loc>https://blog.kmoon.fun/blog/semantic-gap/</loc>
     <lastmod>2026-06-05T21:32:42+08:00</lastmod>
   </url><url>
+    <loc>https://blog.kmoon.fun/tags/</loc>
+    <lastmod>2026-06-05T21:32:42+08:00</lastmod>
+  </url><url>
     <loc>https://blog.kmoon.fun/about/</loc>
     <lastmod>2026-06-05T21:25:11+08:00</lastmod>
   </url><url>
@@ -60,7 +63,7 @@
     <loc>https://blog.kmoon.fun/5-core-elements-of-agent/</loc>
     <lastmod>2026-04-25T21:39:28+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/blog/agent/</loc>
+    <loc>https://blog.kmoon.fun/blog/agents/</loc>
     <lastmod>2026-04-25T21:39:28+08:00</lastmod>
   </url><url>
     <loc>https://blog.kmoon.fun/blog/docker/</loc>
@@ -69,28 +72,28 @@
     <loc>https://blog.kmoon.fun/docker-vs-k8s/</loc>
     <lastmod>2026-04-05T21:45:40+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/blog/k8s/</loc>
+    <loc>https://blog.kmoon.fun/blog/kubernetes/</loc>
     <lastmod>2026-04-05T21:45:40+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/blog/link-preview/</loc>
+    <loc>https://blog.kmoon.fun/link-preview/</loc>
     <lastmod>2026-01-20T21:43:06+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/link-preview-technical-principles/</loc>
+    <loc>https://blog.kmoon.fun/blog/link-preview/</loc>
     <lastmod>2026-01-20T21:43:06+08:00</lastmod>
   </url><url>
     <loc>https://blog.kmoon.fun/blog/text2sql/</loc>
     <lastmod>2025-12-10T21:40:24+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/text2sql-implementation-principle/</loc>
+    <loc>https://blog.kmoon.fun/text2sql-principle/</loc>
     <lastmod>2025-12-10T21:40:24+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/blog/algo/</loc>
+    <loc>https://blog.kmoon.fun/blog/algorithms/</loc>
     <lastmod>2025-11-10T21:47:16+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/blog/dp/</loc>
+    <loc>https://blog.kmoon.fun/dynamic-programming/</loc>
     <lastmod>2025-11-10T21:47:16+08:00</lastmod>
   </url><url>
-    <loc>https://blog.kmoon.fun/dynamic-programming-algorithm/</loc>
+    <loc>https://blog.kmoon.fun/blog/dynamic-programming/</loc>
     <lastmod>2025-11-10T21:47:16+08:00</lastmod>
   </url><url>
     <loc>https://blog.kmoon.fun/blog/hashmap/</loc>

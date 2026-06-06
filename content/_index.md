@@ -10,9 +10,9 @@ weight = 1
 
 Single moon, countless peaks, Universal spring awakes.
 
-Nice to meet you.
+I'm glad you're here.
 
-The future is full of possibilities, and life moves forward.  
+The future is full of possibilities, and life moves forward.
 
 Wherever you are, I hope we can learn, grow, and build something meaningful together.
 
@@ -20,15 +20,15 @@ This page is still under construction. Thanks for stopping by.
 
 ## ✨ Now
 
-Interning at ByteDance's GMPT Department in Shanghai.
+Interning at ByteDance in Shanghai.
 
-Working on my master's thesis, focusing on cKE.
+Working on my master's thesis, with a current focus on cKE.
 
-Preparing for the 2027 fall campus recruitment drive.
+Preparing for the 2027 fall campus recruitment season.
 
-**📫 How to Reach me**
+**📫 How to Reach Me**
 
-Github: [kmoonn](https://github.com/kmoonn)
+GitHub: [kmoonn](https://github.com/kmoonn)
 
 Email: hs@kmoon.fun
 

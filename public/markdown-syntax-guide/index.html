@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="https://blog.kmoon.fun/images/favicon.png" /><title>Markdown Syntax Guide | Kmoon Blog</title>
 <meta name="title" content="Markdown Syntax Guide" />
 <meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
-<meta name="keywords" content="markdown,syntax," />
+<meta name="keywords" content="Markdown,Syntax," />
 
 <link rel="canonical" href="https://blog.kmoon.fun/markdown-syntax-guide/">
 
@@ -41,7 +41,7 @@
 	<meta itemprop="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
 	<meta itemprop="datePublished" content="2020-01-03T00:00:00+00:00">
 	<meta itemprop="dateModified" content="2020-01-03T00:00:00+00:00">
-	<meta itemprop="wordCount" content="395">
+	<meta itemprop="wordCount" content="389">
 	<meta itemprop="image" content="https://blog.kmoon.fun/images/share.png">
 	<meta itemprop="keywords" content="Markdown,Syntax">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -206,6 +206,14 @@
         font-size: 14px;
     }
 
+    .section-filter-title {
+        margin-bottom: 0;
+    }
+
+    .blog-search-input {
+        margin-top: 16px;
+    }
+
     content {
         line-height: 1.6;
     }
@@ -329,24 +337,38 @@
     }
 
      
-    ul.blog-posts {
-        list-style-type: none;
-        padding: unset;
+    .blog-posts-by-year {
+        display: grid;
+        gap: 12px;
     }
 
-    ul.blog-posts li {
+    .blog-post-group {
+        margin: 0;
+    }
+
+    .blog-post-year {
+        margin-bottom: 8px;
+    }
+
+    ul.blog-posts {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .blog-post-item {
         display: flex;
     }
 
-    ul.blog-posts li span {
+    .blog-post-item span {
         flex: 0 0 130px;
     }
 
-    ul.blog-posts li span.grouped {
+    .blog-post-item span.grouped {
         flex: 0 0 80px;
     }
 
-    ul.blog-posts li a:visited {
+    .blog-post-link:visited {
         color: var(--link-visited-color);
     }
 
@@ -461,6 +483,11 @@
         color: var(--text-color-primary);
     }
 
+    button.upvote-btn:disabled {
+        cursor: wait;
+        opacity: 0.7;
+    }
+
     button.upvoted {
         color: var(--upvoted-color);
     }
@@ -468,6 +495,13 @@
     span.upvote-count {
         margin-top: -4px;
         font-size: smaller;
+    }
+
+    .upvote-status {
+        display: block;
+        margin-top: 8px;
+        color: var(--text-color-secondary);
+        min-height: 1.2em;
     }
 
      
@@ -621,16 +655,77 @@
 </style>
 <script>
   (function () {
-    try {
-      const theme = localStorage.getItem('theme');
+    const themes = ['system', 'light', 'dark'];
+    const icons = {
+      system: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M12 3a9 9 0 1 0 0 18"></path><path d="M12 3a9 9 0 0 1 0 18"></path></svg>',
+      light: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v3"></path><path d="M12 18.5v3"></path><path d="M21.5 12h-3"></path><path d="M5.5 12h-3"></path><path d="M18.7 5.3l-2.1 2.1"></path><path d="M7.4 16.6l-2.1 2.1"></path><path d="M18.7 18.7l-2.1-2.1"></path><path d="M7.4 7.4L5.3 5.3"></path></svg>',
+      dark: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg>'
+    };
+
+    function getStoredTheme() {
+      try {
+        const theme = localStorage.getItem('theme');
+        return themes.includes(theme) ? theme : 'system';
+      } catch (error) {
+        return 'system';
+      }
+    }
+
+    function applyTheme(theme) {
       if (theme === 'light' || theme === 'dark') {
         document.documentElement.dataset.theme = theme;
       } else {
         delete document.documentElement.dataset.theme;
       }
-    } catch (error) {
-      delete document.documentElement.dataset.theme;
     }
+
+    function renderTheme(theme, themeToggle) {
+      if (!themeToggle) {
+        return;
+      }
+
+      const label = theme.charAt(0).toUpperCase() + theme.slice(1);
+      themeToggle.innerHTML = icons[theme] || icons.system;
+      themeToggle.setAttribute('aria-label', 'Theme: ' + label);
+      themeToggle.setAttribute('title', 'Theme: ' + label);
+      themeToggle.dataset.theme = theme;
+    }
+
+    function persistTheme(theme) {
+      try {
+        if (theme === 'system') {
+          localStorage.removeItem('theme');
+        } else {
+          localStorage.setItem('theme', theme);
+        }
+      } catch (error) {
+        return;
+      }
+    }
+
+    function nextTheme(theme) {
+      const index = themes.indexOf(theme);
+      return themes[(index + 1) % themes.length];
+    }
+
+    const initialTheme = getStoredTheme();
+    applyTheme(initialTheme);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggle = document.querySelector('[data-theme-toggle]');
+      if (!themeToggle) return;
+
+      let currentTheme = getStoredTheme();
+      applyTheme(currentTheme);
+      renderTheme(currentTheme, themeToggle);
+
+      themeToggle.addEventListener('click', function () {
+        currentTheme = nextTheme(currentTheme);
+        persistTheme(currentTheme);
+        applyTheme(currentTheme);
+        renderTheme(currentTheme, themeToggle);
+      });
+    });
   })();
 </script>
 </head>
@@ -672,11 +767,10 @@
 </p>
 
 
- 
 
-<content> <p>For a quick cheatsheet, check out <a href="https://simplemde.com/markdown-guide">https://simplemde.com/markdown-guide</a>.</p>
-<hr>
-<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
+
+<content> <p>This article offers a sample of basic Markdown syntax for Hugo content files and shows how common Markdown and HTML elements are rendered in this theme.</p>
+<p>For a quick cheatsheet, check out <a href="https://simplemde.com/markdown-guide">https://simplemde.com/markdown-guide</a>.</p>
 <h2 id="headings">Headings</h2>
 <p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p>
 <h1 id="h1">H1</h1>
@@ -810,6 +904,7 @@
 </ol>
 </div> </content>
 
+
 <p>
   
   <a href="https://blog.kmoon.fun/blog/markdown/">#Markdown</a>
@@ -823,7 +918,8 @@
 
 
 
- 
+
+
 <div class="toc">
 
 
@@ -999,6 +1095,17 @@
 
 
 
+  
+    
+      
+    
+  
+
+
+
+
+
+
 
 
 
@@ -1007,75 +1114,12 @@ Copyright © 2020 – 2026 · Powered by
     Kmoon
 </a>
 
+
 </footer>
 
-  
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const themeToggle = document.querySelector('[data-theme-toggle]');
-    if (!themeToggle) return;
+    
 
-    const themes = ['system', 'light', 'dark'];
 
-    function getStoredTheme() {
-      try {
-        const theme = localStorage.getItem('theme');
-        return themes.includes(theme) ? theme : 'system';
-      } catch (error) {
-        return 'system';
-      }
-    }
-
-    function applyTheme(theme) {
-      if (theme === 'light' || theme === 'dark') {
-        document.documentElement.dataset.theme = theme;
-      } else {
-        delete document.documentElement.dataset.theme;
-      }
-    }
-
-    function renderTheme(theme) {
-      const icons = {
-        system: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M12 3a9 9 0 1 0 0 18"></path><path d="M12 3a9 9 0 0 1 0 18"></path></svg>',
-        light: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v3"></path><path d="M12 18.5v3"></path><path d="M21.5 12h-3"></path><path d="M5.5 12h-3"></path><path d="M18.7 5.3l-2.1 2.1"></path><path d="M7.4 16.6l-2.1 2.1"></path><path d="M18.7 18.7l-2.1-2.1"></path><path d="M7.4 7.4L5.3 5.3"></path></svg>',
-        dark: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg>'
-      };
-      const label = theme.charAt(0).toUpperCase() + theme.slice(1);
-      themeToggle.innerHTML = icons[theme] || icons.system;
-      themeToggle.setAttribute('aria-label', 'Theme: ' + label);
-      themeToggle.setAttribute('title', 'Theme: ' + label);
-      themeToggle.dataset.theme = theme;
-    }
-
-    function persistTheme(theme) {
-      try {
-        if (theme === 'system') {
-          localStorage.removeItem('theme');
-        } else {
-          localStorage.setItem('theme', theme);
-        }
-      } catch (error) {
-        return;
-      }
-    }
-
-    function nextTheme(theme) {
-      const index = themes.indexOf(theme);
-      return themes[(index + 1) % themes.length];
-    }
-
-    let currentTheme = getStoredTheme();
-    applyTheme(currentTheme);
-    renderTheme(currentTheme);
-
-    themeToggle.addEventListener('click', function () {
-      currentTheme = nextTheme(currentTheme);
-      persistTheme(currentTheme);
-      applyTheme(currentTheme);
-      renderTheme(currentTheme);
-    });
-  });
-</script>
 </body>
 
 </html>

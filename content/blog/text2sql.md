@@ -1,5 +1,5 @@
 +++
-title = "Text2sql Implementation Principle"
+title = "Text2SQL Principle"
 date = "2025-12-10T21:40:24+08:00"
 
 #
@@ -7,7 +7,7 @@ date = "2025-12-10T21:40:24+08:00"
 #
 # description = "An optional description for SEO. If not provided, an automatically created summary will be used."
 
-tags = ["text2sql",]
+tags = ["Text2SQL",]
 +++
 
-This is a page about »Text2sql Implementation Principle«.
+This article explains the core Text2SQL pipeline, from schema understanding and prompt design to query generation and verification.

@@ -1,2 +1,5 @@
 .ttadk/
 specs/doc_export/
+.idea/
+.DS_Store
+public/
