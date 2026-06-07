@@ -2,3 +2,7 @@
 specs/doc_export/
 .idea/
 .DS_Store
+.claude/
+.mcp.json
+ai-plugin.json
+ai-plugin-lock.json

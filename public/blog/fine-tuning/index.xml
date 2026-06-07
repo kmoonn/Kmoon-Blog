@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fine Tuning on Kmoon Blog</title>
-    <link>https://blog.kmoon.fun/blog/fine-tuning/</link>
+    <link>http://localhost:1313/blog/fine-tuning/</link>
     <description>Recent content in Fine Tuning on Kmoon Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -24,12 +24,12 @@
         <userId>00000000000000000</userId>
     </follow_challenge>
     
-    <atom:link href="https://blog.kmoon.fun/blog/fine-tuning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/fine-tuning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fine Tuning: 大模型世界的特长班</title>
-      <link>https://blog.kmoon.fun/fine-tuning-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E9%95%BF%E7%8F%AD/</link>
+      <link>http://localhost:1313/fine-tuning-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E9%95%BF%E7%8F%AD/</link>
       <pubDate>Sat, 09 May 2026 21:41:34 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/fine-tuning-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E9%95%BF%E7%8F%AD/</guid>
+      <guid>http://localhost:1313/fine-tuning-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E9%95%BF%E7%8F%AD/</guid>
       <description>&lt;p&gt;This article summarizes what fine-tuning changes in an LLM workflow, when it helps, and the practical trade-offs involved.&lt;/p&gt;&#xA;</description>
     </item>
   </channel>
