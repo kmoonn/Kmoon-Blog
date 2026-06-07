@@ -1,2 +1,1 @@
-User-Agent: *
-Sitemap: https://blog.kmoon.fun/sitemap.xml
+User-agent: *

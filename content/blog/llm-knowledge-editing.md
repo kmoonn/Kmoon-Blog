@@ -1,5 +1,5 @@
 +++
-title = "LLM Knowledge Editing"
+title = "大模型世界的微创手术：Knowledge Editing"
 date = "2026-05-13T21:46:11+08:00"
 
 #

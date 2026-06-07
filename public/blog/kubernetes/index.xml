@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Kmoon Blog</title>
+    <link>http://localhost:62147/blog/kubernetes/</link>
+    <description>Recent content in Kubernetes on Kmoon Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+      <managingEditor>hushan@kmoon.fun (Kmoon)</managingEditor>
+    
+    
+      <webMaster>hushan@kmoon.fun (Kmoon)</webMaster>
+    
+    
+    <copyright>Copyright © 2020-2026. Kmoon.</copyright>
+    
+    
+    <lastBuildDate>Sun, 05 Apr 2026 21:45:40 +0800</lastBuildDate>
+    
+    
+    <follow_challenge>
+        <feedId>00000000000000000</feedId>
+        <userId>00000000000000000</userId>
+    </follow_challenge>
+    
+    <atom:link href="http://localhost:62147/blog/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试官问我 K8s 完全不会好尴尬</title>
+      <link>http://localhost:62147/%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE%E6%88%91-k8s-%E5%AE%8C%E5%85%A8%E4%B8%8D%E4%BC%9A%E5%A5%BD%E5%B0%B4%E5%B0%AC/</link>
+      <pubDate>Sun, 05 Apr 2026 21:45:40 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>http://localhost:62147/%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE%E6%88%91-k8s-%E5%AE%8C%E5%85%A8%E4%B8%8D%E4%BC%9A%E5%A5%BD%E5%B0%B4%E5%B0%AC/</guid>
+      <description>&lt;p&gt;This article compares Docker and Kubernetes from the perspectives of packaging, orchestration, and the kinds of problems each tool is designed to solve.&lt;/p&gt;&#xA;</description>
+    </item>
+  </channel>
+</rss>

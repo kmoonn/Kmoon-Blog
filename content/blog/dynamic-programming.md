@@ -1,5 +1,5 @@
 +++
-title = "Dynamic Programming"
+title = "[算法合集] - 动态规划"
 date = "2025-11-10T21:47:16+08:00"
 
 tags = ["Dynamic Programming","Algorithms",]

@@ -1,5 +1,5 @@
 +++
-title = "LLM Pre Training"
+title = "大模型世界的九年义务教育：Pre Training"
 date = "2026-05-20T21:41:56+08:00"
 
 #

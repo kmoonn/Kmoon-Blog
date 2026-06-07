@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Kmoon Blog</title>
-    <link>https://blog.kmoon.fun/</link>
+    <link>http://localhost:62147/</link>
     <description>Recent content in Home on Kmoon Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -16,7 +16,7 @@
     <copyright>Copyright © 2020-2026. Kmoon.</copyright>
     
     
-    <lastBuildDate>Fri, 05 Jun 2026 21:32:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 17:15:20 +0800</lastBuildDate>
     
     
     <follow_challenge>
@@ -24,75 +24,75 @@
         <userId>00000000000000000</userId>
     </follow_challenge>
     
-    <atom:link href="https://blog.kmoon.fun/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62147/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>RAG Semantic Gap</title>
-      <link>https://blog.kmoon.fun/rag-semantic-gap/</link>
-      <pubDate>Fri, 05 Jun 2026 21:32:42 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/rag-semantic-gap/</guid>
-      <description>&lt;p&gt;本文讨论 RAG 如何解决语义鸿沟（Semantic Gap）的问题，围绕 RAG 整个流程逐个展开，从用户查询、向量化、检索、知识库各阶段。&lt;/p&gt;&#xA;&lt;h2 id=&#34;查询层&#34;&gt;查询层&lt;/h2&gt;&#xA;&lt;p&gt;用户的原始提问不适合直接拿去做向量检索，可以先把它变成更适合检索的形式。&lt;/p&gt;&#xA;&lt;h3 id=&#34;查询改写query-rewriting&#34;&gt;查询改写（Query Rewriting）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;假设文档嵌入hypothetical-document-embeddings-hyde&#34;&gt;假设文档嵌入（Hypothetical Document Embeddings, HyDE）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;多查询扩展multi-query&#34;&gt;多查询扩展（Multi-Query）&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#0e84b5;font-weight:bold&#34;&gt;MultiQueryRetriever&lt;/span&gt;(BaseRetriever):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;知识库层&#34;&gt;知识库层&lt;/h2&gt;&#xA;&lt;h3 id=&#34;文档切分策略&#34;&gt;文档切分策略&lt;/h3&gt;&#xA;&lt;h3 id=&#34;层次化索引hierarchical-indexing&#34;&gt;层次化索引（Hierarchical Indexing）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;文档增强document-enrichment&#34;&gt;文档增强（Document Enrichment）&lt;/h3&gt;&#xA;&lt;p&gt;HyDE 的反向操作&lt;/p&gt;&#xA;&lt;h2 id=&#34;检索层&#34;&gt;检索层&lt;/h2&gt;&#xA;&lt;p&gt;有了适合检索的用户查询，需要通过检索的方式去知识库检索。&lt;/p&gt;&#xA;&lt;h3 id=&#34;向量检索&#34;&gt;向量检索&lt;/h3&gt;&#xA;&lt;h3 id=&#34;关键词检索&#34;&gt;关键词检索&lt;/h3&gt;&#xA;&lt;p&gt;BM25&lt;/p&gt;&#xA;&lt;h3 id=&#34;混合检索&#34;&gt;混合检索&lt;/h3&gt;&#xA;&lt;h2 id=&#34;重排&#34;&gt;重排&lt;/h2&gt;&#xA;&lt;h3 id=&#34;rrfreciprocal-rank-fusion&#34;&gt;RRF（Reciprocal Rank Fusion）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;重排序模型reranker&#34;&gt;重排序模型（Reranker）&lt;/h3&gt;&#xA;&lt;h2 id=&#34;embedding-模型&#34;&gt;Embedding 模型&lt;/h2&gt;&#xA;&lt;h3 id=&#34;领域微调fine-tuning&#34;&gt;领域微调（Fine-tuning）&lt;/h3&gt;&#xA;&lt;h2 id=&#34;组合拳&#34;&gt;组合拳&lt;/h2&gt;&#xA;</description>
+      <title>SSE：服务端实时推送技术</title>
+      <link>http://localhost:62147/sse%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sat, 06 Jun 2026 17:15:20 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>http://localhost:62147/sse%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF/</guid>
+      <description>&lt;p&gt;Start writing here.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://blog.kmoon.fun/about/</link>
+      <link>http://localhost:62147/about/</link>
       <pubDate>Fri, 05 Jun 2026 21:25:11 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/about/</guid>
-      <description>&lt;p&gt;Hi, I&amp;rsquo;m Hushan, and I also write under the name kmoon.&lt;/p&gt;&#xA;&lt;p&gt;This site is where I collect technical notes, longer essays, and the small ideas that stay with me long enough to become writing.&lt;/p&gt;&#xA;&lt;p&gt;I spend most of my time thinking about large language models, search, knowledge editing, and software systems, but I also like writing about study, work, and everyday life when those experiences are worth keeping.&lt;/p&gt;&#xA;&lt;p&gt;If something here resonates with you, feel free to reach out by email or through GitHub.&lt;/p&gt;&#xA;</description>
+      <guid>http://localhost:62147/about/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m Hushan.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
       <title>Resume</title>
-      <link>https://blog.kmoon.fun/resume/</link>
+      <link>http://localhost:62147/resume/</link>
       <pubDate>Fri, 05 Jun 2026 21:23:36 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/resume/</guid>
+      <guid>http://localhost:62147/resume/</guid>
       <description>&lt;p&gt;This page is a short landing page for my latest resume.&lt;/p&gt;&#xA;&lt;p&gt;You can view the full PDF version &lt;a href=&#34;https://resume.kmoon.fun&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>LLM Pre Training</title>
-      <link>https://blog.kmoon.fun/llm-pre-training/</link>
+      <title>大模型世界的九年义务教育：Pre Training</title>
+      <link>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2pre-training/</link>
       <pubDate>Wed, 20 May 2026 21:41:56 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/llm-pre-training/</guid>
+      <guid>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2pre-training/</guid>
       <description>&lt;p&gt;This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>Brute Force SSH Port</title>
-      <link>https://blog.kmoon.fun/brute-force-ssh-port/</link>
+      <title>为什么我的 SSH 端口一直在被爆破？</title>
+      <link>http://localhost:62147/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84-ssh-%E7%AB%AF%E5%8F%A3%E4%B8%80%E7%9B%B4%E5%9C%A8%E8%A2%AB%E7%88%86%E7%A0%B4/</link>
       <pubDate>Fri, 15 May 2026 21:45:11 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/brute-force-ssh-port/</guid>
+      <guid>http://localhost:62147/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84-ssh-%E7%AB%AF%E5%8F%A3%E4%B8%80%E7%9B%B4%E5%9C%A8%E8%A2%AB%E7%88%86%E7%A0%B4/</guid>
       <description>&lt;p&gt;This article explains how SSH brute-force attacks typically work, what signals help detect them, and which defenses are most effective in practice.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>LLM Knowledge Editing</title>
-      <link>https://blog.kmoon.fun/llm-knowledge-editing/</link>
+      <title>大模型世界的微创手术：Knowledge Editing</title>
+      <link>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E5%BE%AE%E5%88%9B%E6%89%8B%E6%9C%AFknowledge-editing/</link>
       <pubDate>Wed, 13 May 2026 21:46:11 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/llm-knowledge-editing/</guid>
+      <guid>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E5%BE%AE%E5%88%9B%E6%89%8B%E6%9C%AFknowledge-editing/</guid>
       <description>&lt;p&gt;This article introduces knowledge editing for LLMs, including why it matters and the main approaches used in practice.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>LLM Fine Tuning</title>
-      <link>https://blog.kmoon.fun/llm-fine-tuning/</link>
+      <title>大模型世界的特长班：Fine Tuning</title>
+      <link>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E9%95%BF%E7%8F%ADfine-tuning/</link>
       <pubDate>Sat, 09 May 2026 21:41:34 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/llm-fine-tuning/</guid>
+      <guid>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E7%89%B9%E9%95%BF%E7%8F%ADfine-tuning/</guid>
       <description>&lt;p&gt;This article summarizes what fine-tuning changes in an LLM workflow, when it helps, and the practical trade-offs involved.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>5 Core Elements of Agent</title>
-      <link>https://blog.kmoon.fun/5-core-elements-of-agent/</link>
+      <title>AI Agent 的 5 大核心要素</title>
+      <link>http://localhost:62147/ai-agent-%E7%9A%84-5-%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0/</link>
       <pubDate>Sat, 25 Apr 2026 21:39:28 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/5-core-elements-of-agent/</guid>
+      <guid>http://localhost:62147/ai-agent-%E7%9A%84-5-%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0/</guid>
       <description>&lt;p&gt;This article breaks agent systems down into five core elements and explains how they work together in practical applications.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>Docker vs K8s</title>
-      <link>https://blog.kmoon.fun/docker-vs-k8s/</link>
+      <title>面试官问我 K8s 完全不会好尴尬</title>
+      <link>http://localhost:62147/%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE%E6%88%91-k8s-%E5%AE%8C%E5%85%A8%E4%B8%8D%E4%BC%9A%E5%A5%BD%E5%B0%B4%E5%B0%AC/</link>
       <pubDate>Sun, 05 Apr 2026 21:45:40 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/docker-vs-k8s/</guid>
+      <guid>http://localhost:62147/%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE%E6%88%91-k8s-%E5%AE%8C%E5%85%A8%E4%B8%8D%E4%BC%9A%E5%A5%BD%E5%B0%B4%E5%B0%AC/</guid>
       <description>&lt;p&gt;This article compares Docker and Kubernetes from the perspectives of packaging, orchestration, and the kinds of problems each tool is designed to solve.&lt;/p&gt;&#xA;</description>
     </item>
     <item>
-      <title>Link Preview</title>
-      <link>https://blog.kmoon.fun/link-preview/</link>
+      <title>一直特别喜欢飞书的 Link Preview 功能</title>
+      <link>http://localhost:62147/%E4%B8%80%E7%9B%B4%E7%89%B9%E5%88%AB%E5%96%9C%E6%AC%A2%E9%A3%9E%E4%B9%A6%E7%9A%84-link-preview-%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Tue, 20 Jan 2026 21:43:06 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/link-preview/</guid>
+      <guid>http://localhost:62147/%E4%B8%80%E7%9B%B4%E7%89%B9%E5%88%AB%E5%96%9C%E6%AC%A2%E9%A3%9E%E4%B9%A6%E7%9A%84-link-preview-%E5%8A%9F%E8%83%BD/</guid>
       <description>&lt;p&gt;This article explains how link preview systems fetch pages, extract metadata, cache results, and render rich preview cards.&lt;/p&gt;&#xA;</description>
     </item>
   </channel>

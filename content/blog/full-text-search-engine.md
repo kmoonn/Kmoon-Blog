@@ -1,5 +1,5 @@
 +++
-title = "150 Lines Python to Full Text Search Engine"
+title = "150 行 Python 代码构建全文搜索引擎"
 date = "2022-04-24T21:43:52+08:00"
 
 #

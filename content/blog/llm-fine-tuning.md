@@ -1,5 +1,5 @@
 +++
-title = "LLM Fine Tuning"
+title = "大模型世界的特长班：Fine Tuning"
 date = "2026-05-09T21:41:34+08:00"
 
 #

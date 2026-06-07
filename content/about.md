@@ -19,10 +19,4 @@ menu = "main"
 # tags = ["markdown","syntax",]
 +++
 
-Hi, I'm Hushan, and I also write under the name kmoon.
-
-This site is where I collect technical notes, longer essays, and the small ideas that stay with me long enough to become writing.
-
-I spend most of my time thinking about large language models, search, knowledge editing, and software systems, but I also like writing about study, work, and everyday life when those experiences are worth keeping.
-
-If something here resonates with you, feel free to reach out by email or through GitHub.
+Hi, I'm Hushan.

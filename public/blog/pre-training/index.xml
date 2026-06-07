@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pre Training on Kmoon Blog</title>
+    <link>http://localhost:62147/blog/pre-training/</link>
+    <description>Recent content in Pre Training on Kmoon Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+      <managingEditor>hushan@kmoon.fun (Kmoon)</managingEditor>
+    
+    
+      <webMaster>hushan@kmoon.fun (Kmoon)</webMaster>
+    
+    
+    <copyright>Copyright © 2020-2026. Kmoon.</copyright>
+    
+    
+    <lastBuildDate>Wed, 20 May 2026 21:41:56 +0800</lastBuildDate>
+    
+    
+    <follow_challenge>
+        <feedId>00000000000000000</feedId>
+        <userId>00000000000000000</userId>
+    </follow_challenge>
+    
+    <atom:link href="http://localhost:62147/blog/pre-training/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大模型世界的九年义务教育：Pre Training</title>
+      <link>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2pre-training/</link>
+      <pubDate>Wed, 20 May 2026 21:41:56 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
+      <guid>http://localhost:62147/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2pre-training/</guid>
+      <description>&lt;p&gt;This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.&lt;/p&gt;&#xA;</description>
+    </item>
+  </channel>
+</rss>
