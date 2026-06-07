@@ -4,4 +4,6 @@ date = "{{ .Date }}"
 tags = [""]
 +++
 
+# "{{ replace .Name "-" " " | title }}"
+
 Write the article here.

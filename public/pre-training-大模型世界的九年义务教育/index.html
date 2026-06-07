@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://blog.kmoon.fun/images/favicon.png" /><title>Pre Training: 大模型世界的九年义务教育 | Kmoon Blog</title>
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" /><title>Pre Training: 大模型世界的九年义务教育 | Kmoon Blog</title>
 <meta name="title" content="Pre Training: 大模型世界的九年义务教育" />
 <meta name="description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization." />
 <meta name="keywords" content="LLM,Pre Training," />
 
-<link rel="canonical" href="https://blog.kmoon.fun/pre-training-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2/">
+<link rel="canonical" href="http://localhost:1313/pre-training-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2/">
 
 
-<meta property="og:url" content="https://blog.kmoon.fun/pre-training-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2/">
-	<meta property="og:site_name" content="Kmoon Blog">
-	<meta property="og:title" content="Pre Training: 大模型世界的九年义务教育">
-	<meta property="og:description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="blog">
-		<meta property="article:published_time" content="2026-05-20T21:41:56+08:00">
-		<meta property="article:modified_time" content="2026-05-20T21:41:56+08:00">
-		<meta property="article:tag" content="LLM">
-		<meta property="article:tag" content="Pre Training">
-		<meta property="og:image" content="https://blog.kmoon.fun/images/share.png">
-
-
-
-
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="https://blog.kmoon.fun/images/share.png">
-	<meta name="twitter:title" content="Pre Training: 大模型世界的九年义务教育">
-	<meta name="twitter:description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.">
+<meta property="og:url" content="http://localhost:1313/pre-training-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%96%E7%95%8C%E7%9A%84%E4%B9%9D%E5%B9%B4%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2/">
+  <meta property="og:site_name" content="Kmoon Blog">
+  <meta property="og:title" content="Pre Training: 大模型世界的九年义务教育">
+  <meta property="og:description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-05-20T21:41:56+08:00">
+    <meta property="article:modified_time" content="2026-05-20T21:41:56+08:00">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Pre Training">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
 
 
 
 
-	<meta itemprop="name" content="Pre Training: 大模型世界的九年义务教育">
-	<meta itemprop="description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.">
-	<meta itemprop="datePublished" content="2026-05-20T21:41:56+08:00">
-	<meta itemprop="dateModified" content="2026-05-20T21:41:56+08:00">
-	<meta itemprop="wordCount" content="16">
-	<meta itemprop="image" content="https://blog.kmoon.fun/images/share.png">
-	<meta itemprop="keywords" content="LLM,Pre Training">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Pre Training: 大模型世界的九年义务教育">
+  <meta name="twitter:description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.">
+
+
+
+
+  <meta itemprop="name" content="Pre Training: 大模型世界的九年义务教育">
+  <meta itemprop="description" content="This article outlines the goals, pipeline, and trade-offs of LLM pre-training from data collection to optimization.">
+  <meta itemprop="datePublished" content="2026-05-20T21:41:56+08:00">
+  <meta itemprop="dateModified" content="2026-05-20T21:41:56+08:00">
+  <meta itemprop="wordCount" content="16">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="LLM,Pre Training">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -777,9 +777,9 @@
 
 <p>
   
-  <a href="https://blog.kmoon.fun/blog/llm/">#LLM</a>
+  <a href="http://localhost:1313/blog/llm/">#LLM</a>
   
-  <a href="https://blog.kmoon.fun/blog/pre-training/">#Pre Training</a>
+  <a href="http://localhost:1313/blog/pre-training/">#Pre Training</a>
   
 </p>
 

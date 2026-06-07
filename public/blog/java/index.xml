@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Kmoon Blog</title>
-    <link>https://blog.kmoon.fun/blog/java/</link>
+    <link>http://localhost:1313/blog/java/</link>
     <description>Recent content in Java on Kmoon Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -24,12 +24,12 @@
         <userId>00000000000000000</userId>
     </follow_challenge>
     
-    <atom:link href="https://blog.kmoon.fun/blog/java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java 中 HashMap 的前世今生</title>
-      <link>https://blog.kmoon.fun/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
+      <link>http://localhost:1313/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
       <pubDate>Fri, 12 Sep 2025 21:24:41 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
+      <guid>http://localhost:1313/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
       <description>&lt;p&gt;This article reviews how hash map implementations evolved over time and what trade-offs shaped their design decisions.&lt;/p&gt;&#xA;</description>
     </item>
   </channel>

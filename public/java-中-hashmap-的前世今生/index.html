@@ -1,49 +1,138 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://blog.kmoon.fun/images/favicon.png" /><title>Java 中 HashMap 的前世今生 | Kmoon Blog</title>
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" /><title>Java 中 HashMap 的前世今生 | Kmoon Blog</title>
 <meta name="title" content="Java 中 HashMap 的前世今生" />
-<meta name="description" content="This article reviews how hash map implementations evolved over time and what trade-offs shaped their design decisions." />
+<meta name="description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。
+它既是我们日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。
+下面我将从 JDK 1.0 到 JDK 24，回顾 HashMap 的设计演进，试图回答三个问题：
+
+HashMap 一开始是如何设计的？
+为什么 JDK 1.8 对它进行了“重构级”改造？
+HashMap 背后体现了怎样的工程思想？
+
+为什么 HashMap 如此重要？
+HashMap 的重要性不在于“会不会用”，而在于：
+
+
+它综合了数组、链表、红黑树等经典数据结构
+
+
+它体现了时间与空间的权衡
+
+
+它明确区分了单线程容器与并发容器的设计边界
+
+
+它的演进几乎映射了 Java 集合框架的成熟过程
+
+
+理解 HashMap，往往是 Java 开发者从“API 使用者”走向“底层理解者”的一道分水岭。
+JDK 1.2 ~ 1.7：草莽时代的 HashMap
+JDK 1.0/1.1 只有 Hashtable，HashMap 是在 JDK 1.2 的 Collection Framework 中引入的。
+底层结构
+早期 HashMap 的底层结构非常直接：数组 &#43; 链表
+关键参数
+Hash 计算方式
+元素插入方式：头插法
+
+JDK 1.2
+
+ 1package java.util;
+ 2import java.io.*;
+ 3
+ 4public class HashMap&lt;K, V&gt; 
+ 5        extends AbstractMap&lt;K, V&gt; 
+ 6        implements Map&lt;K, V&gt;, Cloneable, Serializable 
+ 7{
+ 8    static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
+ 9    static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;
+10    static final float DEFAULT_LOAD_FACTOR = 0.75f;
+11    static final Entry&lt;?,?&gt;[] EMPTY_TABLE = {};
+12    transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;
+13    transient int size;
+14    final float loadFactor;
+15    transient int modCount;
+16    static final int ALTERNATIVE_HASHING_THRESHOLD_DEFAULT = Integer.MAX_VALUE;
+17}
+
+JDK 1.0
+
+JDK 1.8：HashMap 的分水岭
+如果说 HashMap 的历史只有一个转折点，那一定是 JDK1.8。" />
 <meta name="keywords" content="Java,HashMap," />
 
-<link rel="canonical" href="https://blog.kmoon.fun/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
+<link rel="canonical" href="http://localhost:1313/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
 
 
-<meta property="og:url" content="https://blog.kmoon.fun/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
-	<meta property="og:site_name" content="Kmoon Blog">
-	<meta property="og:title" content="Java 中 HashMap 的前世今生">
-	<meta property="og:description" content="This article reviews how hash map implementations evolved over time and what trade-offs shaped their design decisions.">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="blog">
-		<meta property="article:published_time" content="2025-09-12T21:24:41+08:00">
-		<meta property="article:modified_time" content="2025-09-12T21:24:41+08:00">
-		<meta property="article:tag" content="Java">
-		<meta property="article:tag" content="HashMap">
-		<meta property="og:image" content="https://blog.kmoon.fun/images/share.png">
+<meta property="og:url" content="http://localhost:1313/java-%E4%B8%AD-hashmap-%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
+  <meta property="og:site_name" content="Kmoon Blog">
+  <meta property="og:title" content="Java 中 HashMap 的前世今生">
+  <meta property="og:description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。
+它既是我们日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。
+下面我将从 JDK 1.0 到 JDK 24，回顾 HashMap 的设计演进，试图回答三个问题：
+HashMap 一开始是如何设计的？ 为什么 JDK 1.8 对它进行了“重构级”改造？ HashMap 背后体现了怎样的工程思想？ 为什么 HashMap 如此重要？ HashMap 的重要性不在于“会不会用”，而在于：
+它综合了数组、链表、红黑树等经典数据结构
+它体现了时间与空间的权衡
+它明确区分了单线程容器与并发容器的设计边界
+它的演进几乎映射了 Java 集合框架的成熟过程
+理解 HashMap，往往是 Java 开发者从“API 使用者”走向“底层理解者”的一道分水岭。
+JDK 1.2 ~ 1.7：草莽时代的 HashMap JDK 1.0/1.1 只有 Hashtable，HashMap 是在 JDK 1.2 的 Collection Framework 中引入的。
+底层结构 早期 HashMap 的底层结构非常直接：数组 &#43; 链表
+关键参数 Hash 计算方式 元素插入方式：头插法 JDK 1.2 1package java.util; 2import java.io.*; 3 4public class HashMap&lt;K, V&gt; 5 extends AbstractMap&lt;K, V&gt; 6 implements Map&lt;K, V&gt;, Cloneable, Serializable 7{ 8 static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; 9 static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30; 10 static final float DEFAULT_LOAD_FACTOR = 0.75f; 11 static final Entry&lt;?,?&gt;[] EMPTY_TABLE = {}; 12 transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE; 13 transient int size; 14 final float loadFactor; 15 transient int modCount; 16 static final int ALTERNATIVE_HASHING_THRESHOLD_DEFAULT = Integer.MAX_VALUE; 17} JDK 1.0 JDK 1.8：HashMap 的分水岭 如果说 HashMap 的历史只有一个转折点，那一定是 JDK1.8。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-09-12T21:24:41+08:00">
+    <meta property="article:modified_time" content="2025-09-12T21:24:41+08:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="HashMap">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
 
 
 
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="https://blog.kmoon.fun/images/share.png">
-	<meta name="twitter:title" content="Java 中 HashMap 的前世今生">
-	<meta name="twitter:description" content="This article reviews how hash map implementations evolved over time and what trade-offs shaped their design decisions.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Java 中 HashMap 的前世今生">
+  <meta name="twitter:description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。
+它既是我们日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。
+下面我将从 JDK 1.0 到 JDK 24，回顾 HashMap 的设计演进，试图回答三个问题：
+HashMap 一开始是如何设计的？ 为什么 JDK 1.8 对它进行了“重构级”改造？ HashMap 背后体现了怎样的工程思想？ 为什么 HashMap 如此重要？ HashMap 的重要性不在于“会不会用”，而在于：
+它综合了数组、链表、红黑树等经典数据结构
+它体现了时间与空间的权衡
+它明确区分了单线程容器与并发容器的设计边界
+它的演进几乎映射了 Java 集合框架的成熟过程
+理解 HashMap，往往是 Java 开发者从“API 使用者”走向“底层理解者”的一道分水岭。
+JDK 1.2 ~ 1.7：草莽时代的 HashMap JDK 1.0/1.1 只有 Hashtable，HashMap 是在 JDK 1.2 的 Collection Framework 中引入的。
+底层结构 早期 HashMap 的底层结构非常直接：数组 &#43; 链表
+关键参数 Hash 计算方式 元素插入方式：头插法 JDK 1.2 1package java.util; 2import java.io.*; 3 4public class HashMap&lt;K, V&gt; 5 extends AbstractMap&lt;K, V&gt; 6 implements Map&lt;K, V&gt;, Cloneable, Serializable 7{ 8 static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; 9 static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30; 10 static final float DEFAULT_LOAD_FACTOR = 0.75f; 11 static final Entry&lt;?,?&gt;[] EMPTY_TABLE = {}; 12 transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE; 13 transient int size; 14 final float loadFactor; 15 transient int modCount; 16 static final int ALTERNATIVE_HASHING_THRESHOLD_DEFAULT = Integer.MAX_VALUE; 17} JDK 1.0 JDK 1.8：HashMap 的分水岭 如果说 HashMap 的历史只有一个转折点，那一定是 JDK1.8。">
 
 
 
 
-	<meta itemprop="name" content="Java 中 HashMap 的前世今生">
-	<meta itemprop="description" content="This article reviews how hash map implementations evolved over time and what trade-offs shaped their design decisions.">
-	<meta itemprop="datePublished" content="2025-09-12T21:24:41+08:00">
-	<meta itemprop="dateModified" content="2025-09-12T21:24:41+08:00">
-	<meta itemprop="wordCount" content="17">
-	<meta itemprop="image" content="https://blog.kmoon.fun/images/share.png">
-	<meta itemprop="keywords" content="Java,HashMap">
+  <meta itemprop="name" content="Java 中 HashMap 的前世今生">
+  <meta itemprop="description" content="在 Java 后端的世界里，HashMap 是一个绕不开的类。
+它既是我们日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。
+下面我将从 JDK 1.0 到 JDK 24，回顾 HashMap 的设计演进，试图回答三个问题：
+HashMap 一开始是如何设计的？ 为什么 JDK 1.8 对它进行了“重构级”改造？ HashMap 背后体现了怎样的工程思想？ 为什么 HashMap 如此重要？ HashMap 的重要性不在于“会不会用”，而在于：
+它综合了数组、链表、红黑树等经典数据结构
+它体现了时间与空间的权衡
+它明确区分了单线程容器与并发容器的设计边界
+它的演进几乎映射了 Java 集合框架的成熟过程
+理解 HashMap，往往是 Java 开发者从“API 使用者”走向“底层理解者”的一道分水岭。
+JDK 1.2 ~ 1.7：草莽时代的 HashMap JDK 1.0/1.1 只有 Hashtable，HashMap 是在 JDK 1.2 的 Collection Framework 中引入的。
+底层结构 早期 HashMap 的底层结构非常直接：数组 &#43; 链表
+关键参数 Hash 计算方式 元素插入方式：头插法 JDK 1.2 1package java.util; 2import java.io.*; 3 4public class HashMap&lt;K, V&gt; 5 extends AbstractMap&lt;K, V&gt; 6 implements Map&lt;K, V&gt;, Cloneable, Serializable 7{ 8 static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; 9 static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30; 10 static final float DEFAULT_LOAD_FACTOR = 0.75f; 11 static final Entry&lt;?,?&gt;[] EMPTY_TABLE = {}; 12 transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE; 13 transient int size; 14 final float loadFactor; 15 transient int modCount; 16 static final int ALTERNATIVE_HASHING_THRESHOLD_DEFAULT = Integer.MAX_VALUE; 17} JDK 1.0 JDK 1.8：HashMap 的分水岭 如果说 HashMap 的历史只有一个转折点，那一定是 JDK1.8。">
+  <meta itemprop="datePublished" content="2025-09-12T21:24:41+08:00">
+  <meta itemprop="dateModified" content="2025-09-12T21:24:41+08:00">
+  <meta itemprop="wordCount" content="206">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Java,HashMap">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -771,15 +860,92 @@
 
 
 
-<content> <p>This article reviews how hash map implementations evolved over time and what trade-offs shaped their design decisions.</p>
+<content> <p>在 Java 后端的世界里，HashMap 是一个绕不开的类。</p>
+<p>它既是我们日常开发中最常用的容器之一，也是面试中被反复追问的“基础题”，甚至还曾因为设计取舍，在并发场景下制造过著名的 CPU 100% 死循环问题。</p>
+<p>下面我将从 JDK 1.0 到 JDK 24，回顾 HashMap 的设计演进，试图回答三个问题：</p>
+<ul>
+<li>HashMap 一开始是如何设计的？</li>
+<li>为什么 JDK 1.8 对它进行了“重构级”改造？</li>
+<li>HashMap 背后体现了怎样的工程思想？</li>
+</ul>
+<h1 id="为什么-hashmap-如此重要">为什么 HashMap 如此重要？</h1>
+<p>HashMap 的重要性不在于“会不会用”，而在于：</p>
+<ul>
+<li>
+<p>它综合了数组、链表、红黑树等经典数据结构</p>
+</li>
+<li>
+<p>它体现了时间与空间的权衡</p>
+</li>
+<li>
+<p>它明确区分了单线程容器与并发容器的设计边界</p>
+</li>
+<li>
+<p>它的演进几乎映射了 Java 集合框架的成熟过程</p>
+</li>
+</ul>
+<p>理解 HashMap，往往是 Java 开发者从“API 使用者”走向“底层理解者”的一道分水岭。</p>
+<h1 id="jdk-12--17草莽时代的-hashmap">JDK 1.2 ~ 1.7：草莽时代的 HashMap</h1>
+<p>JDK 1.0/1.1 只有 Hashtable，HashMap 是在 JDK 1.2 的 Collection Framework 中引入的。</p>
+<h2 id="底层结构">底层结构</h2>
+<p>早期 HashMap 的底层结构非常直接：<strong>数组 + 链表</strong></p>
+<h2 id="关键参数">关键参数</h2>
+<h2 id="hash-计算方式">Hash 计算方式</h2>
+<h2 id="元素插入方式头插法">元素插入方式：头插法</h2>
+<ul>
+<li>JDK 1.2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#007020;font-weight:bold">package</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.util</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.io.*</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">HashMap</span><span style="color:#666">&lt;</span>K,<span style="color:#bbb"> </span>V<span style="color:#666">&gt;</span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>AbstractMap<span style="color:#666">&lt;</span>K,<span style="color:#bbb"> </span>V<span style="color:#666">&gt;</span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">implements</span><span style="color:#bbb"> </span>Map<span style="color:#666">&lt;</span>K,<span style="color:#bbb"> </span>V<span style="color:#666">&gt;</span>,<span style="color:#bbb"> </span>Cloneable,<span style="color:#bbb"> </span>Serializable<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>DEFAULT_INITIAL_CAPACITY<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1<span style="color:#bbb"> </span><span style="color:#666">&lt;&lt;</span><span style="color:#bbb"> </span>4;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>MAXIMUM_CAPACITY<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1<span style="color:#bbb"> </span><span style="color:#666">&lt;&lt;</span><span style="color:#bbb"> </span>30;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">float</span><span style="color:#bbb"> </span>DEFAULT_LOAD_FACTOR<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0.<span style="color:#4070a0">75f</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span>Entry<span style="color:#666">&lt;?</span>,<span style="color:#666">?&gt;[]</span><span style="color:#bbb"> </span>EMPTY_TABLE<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">transient</span><span style="color:#bbb"> </span>Entry<span style="color:#666">&lt;</span>K,V<span style="color:#666">&gt;[]</span><span style="color:#bbb"> </span>table<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(Entry<span style="color:#666">&lt;</span>K,V<span style="color:#666">&gt;[]</span>)<span style="color:#bbb"> </span>EMPTY_TABLE;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">transient</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>size;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">float</span><span style="color:#bbb"> </span>loadFactor;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">transient</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>modCount;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>ALTERNATIVE_HASHING_THRESHOLD_DEFAULT<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Integer.<span style="color:#4070a0">MAX_VALUE</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li>JDK 1.0</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"></code></pre></div><h1 id="jdk-18hashmap-的分水岭">JDK 1.8：HashMap 的分水岭</h1>
+<p>如果说 HashMap 的历史只有一个转折点，那一定是 JDK1.8。</p>
+<p>这一版本几乎重写了 HashMap 的核心逻辑。</p>
+<h2 id="底层结构升级引入红黑树">底层结构升级：引入红黑树</h2>
+<h2 id="插入方式改变尾插法">插入方式改变：尾插法</h2>
+<h2 id="更合理的-hash-扰动函数">更合理的 Hash 扰动函数</h2>
+<h2 id="resize-机制的重大优化">resize 机制的重大优化</h2>
+<h1 id="jdk-9--jdk-24稳定后的演进期">JDK 9 ~ JDK 24：稳定后的演进期</h1>
+<p>在 JDK8 之后，HashMap 的核心设计已经趋于稳定。</p>
+<p>可以认为：JDK8 定义了现代 HashMap 的最终形态。</p>
+<h1 id="hashmap-背后的设计哲学">HashMap 背后的设计哲学</h1>
+<p>回顾 HashMap 的演进，可以总结出几条非常典型的工程取舍。</p>
+<h2 id="1-用空间换时间">1. 用空间换时间</h2>
+<p>负载因子 0.75</p>
+<p>主动扩容</p>
+<p>降低冲突概率</p>
+<h2 id="2-为单线程--低并发场景优化">2. 为单线程 / 低并发场景优化</h2>
+<p>HashMap 明确不是线程安全的</p>
+<p>并发问题交由 ConcurrentHashMap 解决</p>
+<p>职责清晰，避免过度设计</p>
+<h3 id="3-常规情况高效极端情况兜底">3. 常规情况高效，极端情况兜底</h3>
+<p>链表应对大多数场景</p>
+<p>红黑树兜底最坏复杂度 O(log n)</p>
  </content>
 
 
 <p>
   
-  <a href="https://blog.kmoon.fun/blog/java/">#Java</a>
+  <a href="http://localhost:1313/blog/java/">#Java</a>
   
-  <a href="https://blog.kmoon.fun/blog/hashmap/">#HashMap</a>
+  <a href="http://localhost:1313/blog/hashmap/">#HashMap</a>
   
 </p>
 
@@ -792,6 +958,159 @@
 
 <div class="toc">
 
+
+<aside class="toc-nav" role="navigation" aria-label="目录">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#底层结构">底层结构</a></li>
+    <li><a href="#关键参数">关键参数</a></li>
+    <li><a href="#hash-计算方式">Hash 计算方式</a></li>
+    <li><a href="#元素插入方式头插法">元素插入方式：头插法</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#底层结构升级引入红黑树">底层结构升级：引入红黑树</a></li>
+    <li><a href="#插入方式改变尾插法">插入方式改变：尾插法</a></li>
+    <li><a href="#更合理的-hash-扰动函数">更合理的 Hash 扰动函数</a></li>
+    <li><a href="#resize-机制的重大优化">resize 机制的重大优化</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-用空间换时间">1. 用空间换时间</a></li>
+    <li><a href="#2-为单线程--低并发场景优化">2. 为单线程 / 低并发场景优化</a>
+      <ul>
+        <li><a href="#3-常规情况高效极端情况兜底">3. 常规情况高效，极端情况兜底</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tocNav = document.querySelector('.toc-nav');
+        if (!tocNav) return;
+
+        const tocLinks = Array.from(tocNav.querySelectorAll('a'));
+        if (!tocLinks.length) return;
+
+        
+        const idToLink = new Map();
+        const headings = [];
+        const seen = new Set();
+
+        for (const link of tocLinks) {
+            const hash = link.hash || link.getAttribute('href');
+            if (!hash || hash.charAt(0) !== '#') continue;
+            const id = decodeURIComponent(hash.slice(1));
+            idToLink.set(id, link);
+
+            if (!seen.has(id)) {
+                const h = document.getElementById(id);
+                if (h) {
+                    headings.push(h);
+                    seen.add(id);
+                }
+            }
+        }
+
+        if (!headings.length) return;
+
+        const OFFSET = 100; 
+
+        
+        let currentActive = null;
+        let currentChain = [];
+
+        function buildChainFromLink(link) {
+            const chain = [];
+            if (!link) return chain;
+            chain.push(link);
+            let li = link.closest('li');
+            while (li) {
+                const parentLi = li.parentElement ? li.parentElement.closest('li') : null;
+                if (parentLi) {
+                    const parentLink = parentLi.querySelector('a');
+                    if (parentLink) chain.push(parentLink);
+                }
+                li = parentLi;
+            }
+            return chain;
+        }
+
+        function applyActiveChain(newLink) {
+            if (newLink === currentActive) return;
+            const newChain = buildChainFromLink(newLink);
+
+            
+            for (const el of currentChain) {
+                if (!newChain.includes(el)) el.classList.remove('active');
+            }
+            
+            for (const el of newChain) {
+                if (!el.classList.contains('active')) el.classList.add('active');
+            }
+
+            currentActive = newLink || null;
+            currentChain = newChain;
+        }
+
+        
+        tocNav.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (!link || !tocNav.contains(link)) return;
+
+            const hash = link.hash || link.getAttribute('href');
+            if (!hash || hash.charAt(0) !== '#') return;
+
+            const id = decodeURIComponent(hash.slice(1));
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({
+                behavior: reduceMotion ? 'auto' : 'smooth',
+                block: 'start'
+            });
+
+            
+            applyActiveChain(link);
+        });
+
+        
+        function updateActiveLink() {
+            let linkToActivate = null;
+            for (let i = headings.length - 1; i >= 0; i--) {
+                const top = headings[i].getBoundingClientRect().top;
+                if (top <= OFFSET) {
+                    linkToActivate = idToLink.get(headings[i].id) || null;
+                    break;
+                }
+            }
+            applyActiveChain(linkToActivate);
+        }
+
+        
+        let ticking = false;
+        function onScrollOrResize() {
+            if (!ticking) {
+                requestAnimationFrame(function () {
+                    updateActiveLink();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+        
+        updateActiveLink();
+    });
+</script>
 
 </div>
 

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SSE on Kmoon Blog</title>
-    <link>https://blog.kmoon.fun/blog/sse/</link>
+    <link>http://localhost:1313/blog/sse/</link>
     <description>Recent content in SSE on Kmoon Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -24,12 +24,12 @@
         <userId>00000000000000000</userId>
     </follow_challenge>
     
-    <atom:link href="https://blog.kmoon.fun/blog/sse/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/sse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSE: 服务端实时推送技术</title>
-      <link>https://blog.kmoon.fun/sse-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF/</link>
+      <link>http://localhost:1313/sse-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Thu, 06 Nov 2025 17:15:20 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/sse-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF/</guid>
+      <guid>http://localhost:1313/sse-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF/</guid>
       <description>&lt;p&gt;Start writing here.&lt;/p&gt;&#xA;</description>
     </item>
   </channel>

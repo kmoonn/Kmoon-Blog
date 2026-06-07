@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Agent on Kmoon Blog</title>
-    <link>https://blog.kmoon.fun/blog/agent/</link>
+    <link>http://localhost:1313/blog/agent/</link>
     <description>Recent content in Agent on Kmoon Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -24,12 +24,12 @@
         <userId>00000000000000000</userId>
     </follow_challenge>
     
-    <atom:link href="https://blog.kmoon.fun/blog/agent/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/agent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Agent 的 5 大核心要素</title>
-      <link>https://blog.kmoon.fun/ai-agent-%E7%9A%84-5-%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0/</link>
+      <link>http://localhost:1313/ai-agent-%E7%9A%84-5-%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0/</link>
       <pubDate>Sat, 25 Apr 2026 21:39:28 +0800</pubDate><author>hushan@kmoon.fun (Kmoon)</author>
-      <guid>https://blog.kmoon.fun/ai-agent-%E7%9A%84-5-%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0/</guid>
+      <guid>http://localhost:1313/ai-agent-%E7%9A%84-5-%E5%A4%A7%E6%A0%B8%E5%BF%83%E8%A6%81%E7%B4%A0/</guid>
       <description>&lt;p&gt;This article breaks agent systems down into five core elements and explains how they work together in practical applications.&lt;/p&gt;&#xA;</description>
     </item>
   </channel>
