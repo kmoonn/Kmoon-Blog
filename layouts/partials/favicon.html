@@ -1,2 +1,5 @@
 {{ with .Site.Params.favicon }}
-<link rel="shortcut icon" href="{{ . | absURL }}" />{{ end }}
+{{ $favicon := . | absURL }}
+<link rel="icon" href="{{ $favicon }}" />
+<link rel="shortcut icon" href="{{ $favicon }}" />
+{{ end }}
