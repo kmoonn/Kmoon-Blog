@@ -6,3 +6,4 @@ specs/doc_export/
 .mcp.json
 ai-plugin.json
 ai-plugin-lock.json
+public/
