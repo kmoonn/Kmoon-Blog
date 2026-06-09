@@ -4,8 +4,6 @@ date = "2026-06-07T17:01:02+08:00"
 tags = ["CLI"]
 +++
 
-# zhlgd-cli 智慧理工大 CLI
-
 一直觉得在命令行里敲命令然后回车，有一种莫名的爽感，特别是当黑框里返回自己想要的东西的时候。
 
 AI 如今发展的很快，CLI（Command Line Interface）被重新推到了历史舞台中央，因为日常我们使用的可视化操作界面（GUI）对于 AI 来说并不友好。对于 AI 来说，可以通过命令直接调用并且返回清晰的结果，才是真正友好且适合 AI 工作的。
@@ -20,13 +18,13 @@ CLI 对于 Agent 来说也是一种工具调用，而且是更适合的一种工
 
 不管干什么，总得得结合实际需求，毕竟没实际用途干着也没劲。仔细想了想日常工作也就来自两方面：学校、公司。公司这边肯定没法下手（压根不需要我），字节这边每天都会有层出不穷的工具，各种花色任你选择，说实话真有点“军备竞赛”那味道了。
 
-所以我把思路转移到学校这边，学校这边能做的感觉挺多的，毕竟学校的网站、各种平台都比较老旧（有点跟不上时代）。突然想到智慧理工大（武理到一个大 OA 平台）应该是日常大家使用最多的平台，而且最近刚好网站改版，让我们把它 CLI 化吧！
+所以我把思路转移到学校这边，学校这边能做的感觉挺多的，毕竟学校的网站、各种平台都比较老旧（有点跟不上时代）。突然想到智慧理工大（武理的一个大 OA 平台）应该是日常大家使用最多的平台，而且最近刚好网站改版，让我们把它 CLI 化吧！
 
 ## 开发流程
 
 第一步肯定是要了解一下 CLI 的开发流程，我现在除了知道应该是要用 node 开发，其他完全零基础啊。好的，开始上网搜搜！
 
-![img.png](img.png)
+![](https://cdn.kmoon.fun/2026/2026-06-08T12-32-53-351Z.png)
 
 找到了一篇 2019 年的知乎文章：[用Node.js开发一个Command Line Interface (CLI)](https://zhuanlan.zhihu.com/p/38730825)，本来我看到这个时间就不打算继续看了，但是换个思路一想，这么久远的还能被我搜到，说不定是一篇优质好文，而且这个标题也是直抒胸臆，所以我决定仔细看一看。
 
@@ -43,15 +41,15 @@ CLI 对于 Agent 来说也是一种工具调用，而且是更适合的一种工
 
 ## 环境配置
 
-简单配置一下 node 环境，我平时一般用 [nvm](https://www.nvmnode.com/)  管理 node 环境，毕竟因为版本不同排查过很久一次 bug。
+简单配置一下 [node](https://nodejs.org/zh-cn) 环境，我平时一般用 [nvm](https://www.nvmnode.com/)  管理 node 环境，毕竟因为版本不同排查过很久一次 bug。
 
 node 环境配置好后检查一下：
 
-![img_2.png](img_2.png)
+![](https://cdn.kmoon.fun/2026/2026-06-08T11-45-40-376Z.png)
 
 创建 npm 模块：npm init
 
-![img_4.png](img_4.png)
+![](https://cdn.kmoon.fun/2026/2026-06-08T12-36-11-738Z.png)
 
 这样就初始化好了整个项目：
 
@@ -78,7 +76,7 @@ node 环境配置好后检查一下：
 }
 ```
 
-> - type 选择 module，因为新版 ES 模块化（用 import/export，现代前端 / CLI 工具必用）
+> - type 这里选择 module，因为新版 ES 模块化（用 import/export，现代前端 / CLI 工具必用）
 > - commonjs：老版 Node.js 模块化（用 require() 导入）
 
 在 package.json 文件增加 bin 的对象：
@@ -124,10 +122,11 @@ npm link
 
 和下面图片一样就说明成功了
 
-![img_5.png](img_5.png)
+![](https://cdn.kmoon.fun/2026/2026-06-08T11-45-00-454Z.png)
 
-然后我们测试一下我们的命令，新开一个终端输入：`zhlgd`，可以直接看到输出：
+然后我们测试一下我们的命令，新开一个终端输入：`zhlgd-cli`，可以直接看到输出：
 
+![](https://cdn.kmoon.fun/2026/2026-06-08T11-44-22-324Z.png)
 
 后面我们继续开发更多的子命令就可以啦。
 
@@ -135,3 +134,39 @@ npm link
 
 接下来让我们完成第一个最简单的命令，也是每个 CLI 都有的命令，那就是 `help` 查看帮助信息。
 
+我们认识一个新东西，官方推荐的 CLI 开发框架：[commander](https://github.com/tj/commander.js)。
+
+先安装一下依赖
+
+```
+npm install commander
+```
+
+写着写着发现不用自己写 help 命令，框架已经自带了。
+
+下面是使用框架修改后的入口文件 index.js ：
+
+```js
+#!/usr/bin/env node
+
+// 导入 commander 库，用于处理命令行
+import { Command } from 'commander';
+const program = new Command();
+
+// 配置 CLI 基础信息
+program
+    .name('zhlgd')          // 命令名称
+    .version('1.0.0', '-v, --version')  // 版本号
+    .description('一个基于 Node.js 开发的智慧理工大 CLI 工具');  // 描述
+
+// 解析命令行输入的参数
+program.parse(process.argv);
+```
+
+运行一下看看效果：
+
+![](https://cdn.kmoon.fun/2026/2026-06-08T12-31-14-420Z.png)
+
+## zhlgd login
+
+下面啃一个硬骨头：**登录**，毕竟只有登录了才能做后面的事情。
