@@ -170,3 +170,27 @@ program.parse(process.argv);
 ## zhlgd login
 
 下面啃一个硬骨头：**登录**，毕竟只有登录了才能做后面的事情。
+
+1. 用户输入账号、密码 → 点击登录
+2. 前端校验：账号/密码不能为空
+3. 记住密码：写入Cookie（加密存储）
+4. 向后端请求 **RSA公钥**
+5. 使用公钥 **加密账号、密码**
+6. 把加密后的账号密码塞进表单隐藏域
+7. 自动提交登录表单 → 后端验证 → 登录成功/失败
+
+```js
+//获取key
+$.ajax({
+    url : "rsa?skipWechat=true",
+    dataType : "json",
+    type : "POST",
+    success:function(data){
+    var encrypt = new JSEncrypt();
+    encrypt.setPublicKey(data.publicKey);
+    $("#ul").val(encrypt.encrypt(u));
+    $("#pl").val(encrypt.encrypt(p));
+    $("#loginForm")[0].submit();
+    }
+});
+```

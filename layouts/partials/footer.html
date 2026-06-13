@@ -30,10 +30,12 @@ Say hello via <a href="mailto:{{ $authorEmail }}">email</a>.
 
 <!-- Sitemap -->
 {{ if ne $footer.hideCopyright true }}
-Copyright © 2020 – 2026 · Powered by
+Copyright © 2022 – 2026 · Powered by
 <a href="https://github.com/kmoonn" target="_blank" rel="noopener noreferrer" aria-label="Kmoon on GitHub">
     Kmoon
 </a>
+<br />
+<a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2022011774号</a>
 {{ end }}
 {{ if ne $footer.hideSitemap true }}
 🗺️ <a href="{{ "sitemap.xml" | relURL }}">Sitemap</a>.
