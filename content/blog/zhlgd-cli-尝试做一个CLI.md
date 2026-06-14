@@ -169,7 +169,7 @@ program.parse(process.argv);
 
 ## zhlgd login
 
-下面啃一个硬骨头：**登录**，毕竟只有登录了才能做后面的事情。
+下面啃一个硬骨头：**登录**，毕竟只有登录了才能做后面的事情。智慧理工大登录是单点登录方式，大概流程如下：
 
 1. 用户输入账号、密码 → 点击登录
 2. 前端校验：账号/密码不能为空
@@ -178,6 +178,8 @@ program.parse(process.argv);
 5. 使用公钥 **加密账号、密码**
 6. 把加密后的账号密码塞进表单隐藏域
 7. 自动提交登录表单 → 后端验证 → 登录成功/失败
+
+每次会请求后端获取 RSA 加密公钥。
 
 ```js
 //获取key
@@ -194,3 +196,70 @@ $.ajax({
     }
 });
 ```
+
+对用户名和密码加密后，提交登陆获取 ST ticket 票据，重定向后获取cookie，将获取到的cookie保存下来，后续作为鉴权使用。
+
+```js
+// 5. 用 ST 换取完整 Cookie
+const st = extractTicket(loginResp.headers.location);
+await followRedirects(`${SERVICE}?ticket=${st}`, cookieJar, commonHeaders);
+
+// 6. 保存
+saveCookies(cookieJar);
+```
+
+下面我们演示一下，这里为了确保安全性，密码隐藏用户输入：
+
+![](https://cdn.kmoon.fun/2026/2026-06-14T02-16-43-242Z.png)
+
+到这里我们就做完登录 login 命令啦，后续完成其他功能就非常简单了。具体登录细节可以查看源码：[github](https://github.com/kmoonn/zhlgd-cli)
+
+## zhlgd msg & news
+
+接下来我们完成两个基础的功能：
+
+- zhlgd msg：查看我的消息
+- zhldd news：查看校园新闻
+
+只需要将两个接口分别转为javascript脚本请求即可。
+
+```js
+const data = await apiRequest(
+  `${BASE_URL}/tp_up_new/up/newhome/getFpMsgList`,
+  { MSG_TYPE: '3' },
+);
+
+const data = await apiRequest(
+    `${BASE_URL}/tp_up_new/up/newhome/getNewsNotice`,
+    { channel: '13962' },
+);
+```
+
+注意请求的时候需要加载登录成功后获取的 Cookie：
+
+```js
+/**
+ * 带鉴权的 API 请求，未登录时自动提示
+ */
+export async function apiRequest(url, body) {
+    if (!isLoggedIn()) {
+        console.log('⚠️  未登录，请先执行 zhlgd login');
+        process.exit(1);
+    }
+    const cookies = loadCookies();
+    const resp = await axios.post(url, body, {
+        headers: {
+            ...API_HEADERS,
+            'cookie': cookieHeader(cookies),
+            'User-Agent': UA,
+        },
+    });
+    return resp.data;
+}
+```
+
+下面我们测试一下：
+
+![](https://cdn.kmoon.fun/2026/2026-06-14T02-22-55-918Z.png)
+
+![](https://cdn.kmoon.fun/2026/2026-06-14T02-23-11-367Z.png)

@@ -1,5 +1,5 @@
 +++
-title = "Friend"
+title = "Friends"
 date = "2026-06-07T16:45:06+08:00"
 
 #
