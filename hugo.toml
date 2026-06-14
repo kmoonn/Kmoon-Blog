@@ -13,6 +13,9 @@ locale = "zh-CN"
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
 
+# 忽略 LanguageCode 弃用警告
+ignoreLogs = ['warning-deprecated-LanguageCode']
+
 # Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
 [taxonomies]
 tag = "tags"
@@ -125,6 +128,11 @@ email = "hushan@kmoon.fun"
     style = 'github'
     tabWidth = 4
     wrapperClass = 'highlight'
+
+# 允许 Markdown 中使用原始 HTML（figure, svg 等）
+[markup.goldmark]
+  [markup.goldmark.renderer]
+    unsafe = true
 
 # 配置 TOC 渲染规则
 [markup.tableOfContents]
