@@ -1,19 +1,7 @@
 +++
 title = "你听"
 date = "2021-08-17T13:45:56+08:00"
-
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
-
-#
-# tags are optional
-#
-# tags = ["agent","algo","docker","dp","fine tuning","hashmap","java","k8s","knowledge editing","link preview","llm","markdown","pre training","python","rag","search engine","security","semantic gap","ssh","syntax","text2sql",]
 +++
-
-# 你听
 
 文/Hu S.
 

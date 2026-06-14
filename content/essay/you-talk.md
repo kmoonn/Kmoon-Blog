@@ -1,15 +1,7 @@
 +++
 title = "你说"
 date = "2021-08-18T13:57:50+08:00"
-
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
-
 +++
-
-# 你说
 
 文/Hu S.
 

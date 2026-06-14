@@ -1,24 +1,7 @@
 +++
 title = "你心"
 date = "2021-08-15T22:16:07+08:00"
-
-#
-# Set menu to "main" to add this page to
-# the main menu on top of the page
-#
-
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided,  an automatically created summary will be used."
-
-#
-# tags are optional
-#
-# tags = ["hashmap", "java", "markdown", "rag", "semantic gap", "syntax", ]
 +++
-
-# 你心
 
 [增删改查  旧文重发］
 
