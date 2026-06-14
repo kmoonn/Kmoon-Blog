@@ -23,7 +23,7 @@ CLI 对 Agent 来说，本质上也是一种工具调用，而且很多时候还
 
 第一步肯定是先了解一下 CLI 的开发流程。我现在除了知道应该要用 Node.js 开发，其他几乎是零基础。那就老老实实先上网搜。
 
-![搜索 Node.js CLI 开发资料的页面截图](https://cdn.kmoon.fun/2026/2026-06-08T12-32-53-351Z.png)
+![搜索 Node.js CLI](https://cdn.kmoon.fun/2026/2026-06-08T12-32-53-351Z.png)
 
 找到了一篇 2019 年的知乎文章：[用Node.js开发一个Command Line Interface (CLI)](https://zhuanlan.zhihu.com/p/38730825)。本来我看到这个时间，第一反应是打算划走，但换个思路一想，这么久远的文章还能被我搜到，说不定反而是一篇优质内容，而且标题也非常直白，所以我还是决定仔细看一看。
 
@@ -245,6 +245,8 @@ saveCookies(cookieJar);
 ```bash
 npm i zhlgd-cli
 ```
+
+![npm](https://cdn.kmoon.fun/2026/2026-06-14T03-20-20-659Z.png)
 
 所以如果你只是想直接上手体验，而不是自己从头本地联调，走 npm 安装会更方便。具体实现细节如果感兴趣，也可以直接看源码：[zhlgd-cli GitHub 仓库](https://github.com/kmoonn/zhlgd-cli)。
 
