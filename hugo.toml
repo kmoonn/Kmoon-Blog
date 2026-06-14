@@ -122,6 +122,7 @@ style = 'friendly'
 lineNos = true
 lineNumbersInTable = false
 codeFences = true
+noClasses = false
 # 配置 TOC 渲染规则
 # Configure TOC rendering rules.
 [markup.tableOfContents]
