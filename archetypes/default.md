@@ -8,10 +8,7 @@ date = "{{ .Date }}"
 #
 menu = "main"
 
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
+
 
 #
 # tags are optional

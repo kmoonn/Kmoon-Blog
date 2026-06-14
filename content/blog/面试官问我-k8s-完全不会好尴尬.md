@@ -2,10 +2,7 @@
 title = "面试官问我 K8s 完全不会好尴尬"
 date = "2026-04-05T21:45:40+08:00"
 
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
+
 
 tags = ["Docker","Kubernetes",]
 +++

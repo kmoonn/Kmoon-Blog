@@ -10,6 +10,9 @@ title = "Kmoon Blog"
 author = "Kmoon"
 locale = "zh-CN"
 
+# 启用 CJK 语言支持，使 WordCount 和 ReadingTime 对中文统计准确
+hasCJKLanguage = true
+
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
 

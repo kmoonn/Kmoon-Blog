@@ -2,10 +2,7 @@
 title = "AI Agent 的 5 大核心要素"
 date = "2026-04-25T21:39:28+08:00"
 
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
+
 
 tags = ["Agent"]
 +++
