@@ -1,6 +1,6 @@
 {{ define "main" }}
-{{ if eq .Type "blog" }}
-{{ if not .Params.menu }}
+{{ $showArticleHeader := and (not .Params.menu) (or (eq .Type "blog") (eq .Type "essay")) }}
+{{ if $showArticleHeader }}
 <h1>{{ .Title }}</h1>
 {{ if .Date }}
 <p>
@@ -11,7 +11,15 @@
   </i>
 </p>
 {{ end }}
+{{ $wordCountLabel := printf "%d" .WordCount }}
+{{ if ge .WordCount 1000 }}
+{{ $wordCountLabel = replace (printf "%.1fk" (div .WordCount 1000.0)) ".0k" "k" }}
 {{ end }}
+<p class="article-meta">
+  <span>约 {{ $wordCountLabel }} 字</span>
+  <span aria-hidden="true">·</span>
+  <span>{{ .ReadingTime }} min</span>
+</p>
 {{ end }}
 
 <content> {{ .Content }} </content>

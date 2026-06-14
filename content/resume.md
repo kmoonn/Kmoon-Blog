@@ -2,16 +2,7 @@
 title = "Resume"
 date = "2026-06-05T21:23:36+08:00"
 menu = "main"
-
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
-
-#
-# tags are optional
-#
-# tags = ["markdown","syntax",]
+weight = 103
 +++
 
 This page is a short landing page for my latest resume.

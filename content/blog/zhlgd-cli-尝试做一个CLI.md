@@ -97,7 +97,7 @@ Node 环境配好之后先检查一下：
 
 文件结构长这样：
 
-```text
+```
 zhlgd-cli/
 ├── bin/
 │   └── index.js
