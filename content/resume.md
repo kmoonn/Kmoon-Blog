@@ -7,4 +7,4 @@ weight = 103
 
 This page is a short landing page for my latest resume.
 
-You can view the full PDF version [here](https://resume.kmoon.fun).
+You can view the full PDF version [here](https://blog.kmoon.fun/resume.pdf).

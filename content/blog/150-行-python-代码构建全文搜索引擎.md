@@ -273,7 +273,7 @@ def search(self, query, search_type='AND', rank=True):
 
 现在搜索结果不再是随机的——最相关的文档排在前面。对 "London Beer" 搜索，讲伦敦啤酒节的文档会排在讲一般伦敦旅游的文档之前。
 
-## 所以，150 行代码到底教会了我们什么
+## 写在最后
 
 这个项目虽然只有 150 行，但它完整覆盖了一个搜索引擎的核心链路：**数据加载 → 文本分析 → 倒排索引 → 布尔检索 → 相关性排序**。每一步都是搜索引擎领域几十年来沉淀下来的基础概念。
 
@@ -288,4 +288,5 @@ def search(self, query, search_type='AND', rank=True):
 
 但核心思想，从来没变过。
 
-> 完整代码在 [GitHub](https://github.com/bartdegoede/python-searchengine)，安装依赖后 `python run.py` 即可运行。参考文章：[Building a full-text search engine in 150 lines of Python](https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/)。
+> - 完整代码: [GitHub: python-searchengine](https://github.com/bartdegoede/python-searchengine)
+> - 参考文章: [Building a full-text search engine in 150 lines of Python](https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/)
