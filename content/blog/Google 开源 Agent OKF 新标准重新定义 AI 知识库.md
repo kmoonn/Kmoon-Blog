@@ -1,5 +1,5 @@
 +++
-title = "Google 开源 Agent OKF 新标准重新定义 AI 知识库"
+title = "Google 开源 Agent OKF 新标准"
 date = "2026-06-17T09:34:20+08:00"
 tags = ["OKF"]
 +++
