@@ -49,22 +49,29 @@ If you'd like to exchange links, feel free to reach out.
   </div>
 </section>
 
-<section class="links-section">
+<!-- <section class="links-section">
   <div class="links-section-header">
     <p class="links-section-kicker">Things I build</p>
   </div>
   <div class="links-grid links-grid--works">
     <a href="/" class="link-card">
-      <img src="https://cdn.kmoon.fun/profile.jpeg" alt="Kmoon 的头像" class="link-avatar link-avatar--cover" loading="lazy">
+      <img src="https://cdn.kmoon.fun/profile.jpeg" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
         <span class="link-domain">this site</span>
         <span class="link-name">Kmoon's Blog</span>
-        <span class="link-desc">我的博客</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="https://github.com/kmoonn/zhlgd-cli" class="link-card">
+      <img src="https://github.githubassets.com/favicons/favicon.svg" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">zhlgd CLI</span>
+        <span class="link-name">zhlgd-cli</span>
       </div>
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
   </div>
-</section>
+</section> -->
 
 <section class="links-section">
   <div class="links-section-header">
@@ -72,7 +79,16 @@ If you'd like to exchange links, feel free to reach out.
   </div>
   <div class="links-grid links-grid--friends">
     <a href="https://blog.hazenix.top" target="_blank" rel="noopener" class="link-card">
-      <img src="https://blog.hazenix.top/assets/avatar-C7oPo7sC.jpg" alt="Hazenix 的头像" class="link-avatar link-avatar--cover" loading="lazy">
+      <img src="https://serv.xbottle.top/i/https://raw.githubusercontent.com/SomeBottle/somebottle/master/sticker/cut_the_potato.gif" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">bottle.moe</span>
+        <span class="link-name">些瓶的小站</span>
+        <span class="link-desc">相信的心就是你的魔法！</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="https://blog.hazenix.top" target="_blank" rel="noopener" class="link-card">
+      <img src="https://blog.hazenix.top/assets/avatar-C7oPo7sC.jpg" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
         <span class="link-domain">blog.hazenix.top</span>
         <span class="link-name">Hazenix's Blog</span>
@@ -139,9 +155,9 @@ If you'd like to exchange links, feel free to reach out.
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 9px;
-  min-height: 42px;
-  padding: 12px 13px 10px;
+  gap: 10px;
+  height: 48px;
+  padding: 10px 13px 10px;
   background: linear-gradient(180deg, var(--link-card-paper) 0%, var(--bg-color-secondary) 100%);
   border: 1px solid var(--border-color);
   border-radius: 14px;
