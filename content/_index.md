@@ -23,7 +23,7 @@ This page is still under construction. Thanks for stopping by.
 
 1️⃣ Interning at [ByteDance](https://bytedance.com) in Shanghai.
 
-2️⃣ Working on my master's thesis, with a current focus on [cKE](https://crad.ict.ac.cn/article/doi/10.7544/issn1000-1239.202330965?viewType=HTML).
+2️⃣ Working on my master's thesis, with a current focus on [CKEdit](https://github.com/kmoonn/CKEdit/blob/main/paper/main.md).
 
 3️⃣ [Preparing](https://my.feishu.cn/wiki/OVSGwAyleiAMLLkDpIqc3iFtnFg?from=from_copylink) for the 2027 fall campus recruitment season.
 
