@@ -1,17 +1,15 @@
 +++
 title = "Google 开源 Agent OKF 新标准"
 date = "2026-06-17T09:34:20+08:00"
-lastUpdated = "2026-06-17"
 description = "Google 开源 OKF 规范，用 Markdown + YAML frontmatter 标准化 AI 知识库格式。本质是 Karpathy LLM Wiki 模式的工业化，补上 AI 知识栈的最后一公里。"
 tags = ["OKF", "AI Agent", "知识管理"]
 +++
 
 > Reference:
+>
 > - [Introducing the Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/)
 > - [AI 寒武纪：谷歌突然开源Agent OKF新标准！](https://mp.weixin.qq.com/s/nhF1cy_lIQukq_niVFvRCA)
 > - [GitHub：knowledge-catalog](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)
-
-上回我写了 [RAG vs LLM Wiki 的分析](/blog/rag-vs-llm-wiki/)，核心矛盾是预编译的 wiki 和原始信源之间的取舍。Karpathy 的思路是让 LLM 先把所有文档读一遍，整理成结构化的知识库，以后直接读 wiki 就行。没想到两个月不到，Google 就把这套模式标准化了。
 
 Open Knowledge Format，简称 OKF，6 月 12 日发布，[GitHub 仓库](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)三天冲到 3300+ stars。它要做的事情很简单：给 AI 知识库定一个通用的、可移植的格式规范。
 
@@ -27,7 +25,7 @@ Open Knowledge Format，简称 OKF，6 月 12 日发布，[GitHub 仓库](https:
 
 目录结构长这样：
 
-```
+```text
 sales/
 ├── index.md
 ├── datasets/
@@ -115,9 +113,7 @@ OKF 不绑定任何云服务、数据库、模型厂商或 agent 框架。读写
 Google 随规范一起发布了 3 个参考实现：
 
 1. **enrichment agent**：工作在 BigQuery 数据集上的数据增强 Agent。先针对每个表和视图写 OKF 概念文件草稿，再跑一遍 LLM 爬取权威文档，补充 schema、引用和关联路径。基于 Google ADK 构建，Gemini 做后端模型。
-
 2. **static HTML visualizer**：把任何 OKF bundle 转成单个自包含 HTML 文件里的交互式图形视图。无需后端，数据不会离开页面。
-
 3. **3 个示例 bundle**：GA4 电商数据集、Stack Overflow、比特币公开数据集。都是用上面的 enrichment agent 生成的，放在 repo 里作为格式合规的示例。
 
 ## 说点实在的
