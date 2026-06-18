@@ -5,6 +5,18 @@ menu = "main"
 weight = 104
 +++
 
+<img src="https://cdn.kmoon.fun/2026/2026-06-13T06-02-53-930Z.png" width=90>
+
 Hi, I'm Hushan.
 
-<!-- ![profile](https://cdn.kmoon.fun/2026/2026-06-13T06-02-53-930Z.png) -->
+a coder.
+
+24 years old.
+
+mbti: ESTJ.
+
+edu: whut ——> whut.
+
+intern: iFlytek ——> Kuaishou ——> ByteDance.
+
+skills: Python、Java.
