@@ -257,24 +257,48 @@
     nav a {
         margin-right: 0;
         padding: 0.2rem 0.62rem;
-        border: 1px solid transparent;
-        border-radius: 999px;
+        border: none;
+        border-radius: 0;
         color: var(--link-color);
-        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        position: relative;
+        transition: color 0.2s ease;
+    }
+
+    nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        border-radius: 1px;
+        background: linear-gradient(90deg, #5d8cc6, #cb7e60, #d8b45a, #5d8cc6);
+        background-size: 300% 100%;
+        animation: nav-underline-flow 3s linear infinite;
+        transition: width 0.3s ease;
+    }
+
+    nav a.active::after,
+    nav a:hover::after,
+    nav a:focus-visible::after {
+        width: 100%;
     }
 
     nav a.active {
         color: var(--link-color);
-        background-color: var(--bg-color-secondary);
-        border-color: var(--border-color);
+        background: none;
     }
 
     nav a:hover,
     nav a:focus-visible {
         text-decoration: none;
         color: var(--link-color);
-        background-color: var(--bg-color-secondary);
-        border-color: var(--border-color);
+        background: none;
+    }
+
+    @keyframes nav-underline-flow {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 300% 50%; }
     }
 
     .theme-toggle,
@@ -391,6 +415,64 @@
         border: none;
         border-radius: 12px;
         box-shadow: none;
+    }
+
+    /* Home banner: gif + Travelling 同行 */
+    .home-banner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        margin: 0 0 10px;
+    }
+
+    .home-banner-img {
+        max-width: 180px;
+        width: 100%;
+        margin: 0;
+        border: none;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .home-banner-traveling,
+    .home-banner-traveling:hover {
+        font-size: 1em;
+        white-space: nowrap;
+        text-decoration: none;
+        color: var(--link-color);
+        align-self: flex-end;
+        padding-bottom: 4px;
+    }
+
+    /* Home contact icons */
+    .home-contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .home-contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--link-color);
+        text-decoration: none;
+        font-size: .92em;
+        transition: opacity 0.2s ease;
+    }
+
+    .home-contact-link:hover {
+        opacity: .75;
+        text-decoration: none;
+    }
+
+    .home-contact-link svg,
+    .home-contact-link img {
+        flex-shrink: 0;
+        border: none;
+        border-radius: 0;
     }
 
     /* code */
@@ -872,5 +954,12 @@
             font-size: 12px;
             padding: 6px 12px;
         }
+    }
+
+    /* Giscus 评论 */
+    .giscus {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
     }
 </style>

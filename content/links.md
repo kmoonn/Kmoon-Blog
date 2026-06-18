@@ -141,7 +141,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
 .links-grid--reads,
 .links-grid--works,
 .links-grid--friends {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .links-grid--works {
@@ -161,12 +161,11 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
 .link-card:hover,
 .link-card:active {
   position: relative;
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) auto;
+  display: flex;
   align-items: center;
   gap: 10px;
-  height: 48px;
-  padding: 10px 13px 10px;
+  min-height: 48px;
+  padding: 10px 13px;
   background: linear-gradient(180deg, var(--link-card-paper) 0%, var(--bg-color-secondary) 100%);
   border: 1px solid var(--border-color);
   border-radius: 14px;
@@ -217,6 +216,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 247, 251, 0.92) 100%);
   overflow: hidden;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .link-avatar--cover {
@@ -234,6 +234,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   display: grid;
   gap: 2px;
   min-width: 0;
+  flex: 1;
 }
 
 .link-domain {
@@ -245,14 +246,14 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
 }
 
 .link-name {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--text-color-primary);
   line-height: 1.3;
 }
 
 .link-desc {
-  font-size: 12px;
+  font-size: 8px;
   color: var(--text-color-secondary);
   line-height: 1.45;
   display: -webkit-box;
@@ -266,6 +267,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   font-size: 16px;
   line-height: 1;
   color: var(--text-color-tertiary);
+  flex-shrink: 0;
   transition: transform 0.18s ease, color 0.18s ease;
 }
 
@@ -337,6 +339,14 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   }
 }
 
+@media (max-width: 860px) {
+  .links-grid--reads,
+  .links-grid--works,
+  .links-grid--friends {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
   .links-section {
     margin: 20px 0 24px;
@@ -354,7 +364,6 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   .link-card:visited,
   .link-card:hover,
   .link-card:active {
-    grid-template-columns: 36px minmax(0, 1fr);
     min-height: 32px;
     padding: 11px 12px 9px;
   }

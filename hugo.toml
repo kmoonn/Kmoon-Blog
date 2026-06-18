@@ -137,6 +137,20 @@ email = "hushan@kmoon.fun"
   [markup.goldmark.renderer]
     unsafe = true
 
+# Giscus 评论系统配置，详见 https://giscus.app
+# 主题自动跟随页面 light/dark 模式切换，无需手动设置
+[params.giscus]
+repo = "kmoonn/Kmoon-Blog"
+repoId = "R_kgDOSx84-g"
+category = "Announcements"
+categoryId = "DIC_kwDOSx84-s4C_ZsS"
+mapping = "pathname"
+strict = "0"
+reactionsEnabled = "1"
+emitMetadata = "0"
+inputPosition = "top"
+lang = "zh-CN"
+
 # 配置 TOC 渲染规则
 [markup.tableOfContents]
 # 从 h2 开始到 h3 结束，后续的 h 等级将不会被渲染

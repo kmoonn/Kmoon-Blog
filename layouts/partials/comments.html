@@ -1,0 +1,53 @@
+{{ with .Site.Params.giscus }}
+<div class="giscus">
+  <script>
+    // 根据页面当前主题计算 giscus 初始主题，确保首次加载与页面一致
+    function getGiscusTheme() {
+      var attr = document.documentElement.getAttribute('data-theme');
+      if (attr === 'dark') return 'dark';
+      if (attr === 'light') return 'light';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    // 动态创建 giscus script，使用当前页面主题初始化
+    var s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.setAttribute('data-repo', '{{ .repo }}');
+    s.setAttribute('data-repo-id', '{{ .repoId }}');
+    s.setAttribute('data-category', '{{ .category }}');
+    s.setAttribute('data-category-id', '{{ .categoryId }}');
+    s.setAttribute('data-mapping', '{{ .mapping }}');
+    s.setAttribute('data-strict', '{{ .strict }}');
+    s.setAttribute('data-reactions-enabled', '{{ .reactionsEnabled }}');
+    s.setAttribute('data-emit-metadata', '{{ .emitMetadata }}');
+    s.setAttribute('data-input-position', '{{ .inputPosition }}');
+    s.setAttribute('data-theme', getGiscusTheme());
+    s.setAttribute('data-lang', '{{ .lang }}');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.async = true;
+    document.currentScript.parentNode.appendChild(s);
+
+    // 主题切换时同步 giscus
+    function updateGiscusTheme() {
+      var theme = getGiscusTheme();
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, 'https://giscus.app');
+      }
+    }
+
+    // data-theme 属性变化时同步
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.attributeName === 'data-theme') {
+          updateGiscusTheme();
+        }
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true });
+
+    // 系统偏好变化时同步（无 data-theme 时）
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateGiscusTheme);
+  </script>
+</div>
+{{ end }}

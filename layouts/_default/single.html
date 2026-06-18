@@ -186,6 +186,11 @@
 </script>
 {{ end }}
 
+<!-- Giscus 评论：仅 blog/essay 类型文章显示 -->
+{{ if and .Site.Params.giscus (or (eq .Type "blog") (eq .Type "essay")) }}
+{{ partial "comments.html" . }}
+{{ end }}
+
 <!-- Place the TOC at the end to ensure the article content loads first. -->
 {{ $tocEnabled := default .Site.Params.toc .Params.toc }}
 {{ if $tocEnabled }}

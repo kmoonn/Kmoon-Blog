@@ -4,9 +4,10 @@ menu = "main"
 weight = 1
 +++
 
-![](/images/flowers.gif) 
-
-[🚇 Travelling](https://www.travellings.cn/go.html)
+<div class="home-banner">
+  <img src="/images/flowers.gif" alt="" class="home-banner-img">
+  <a href="https://www.travellings.cn/go.html" class="home-banner-traveling" target="_blank" rel="noopener">🚇 Travelling</a>
+</div>
 
 ## 👋 Hi, this is Hushan. You can call me kmoon
 
@@ -31,8 +32,17 @@ This page is still under construction. Thanks for stopping by.
 
 **📫 How to Reach Me**
 
-GitHub: [kmoonn](https://github.com/kmoonn)
-
-Email: hs@kmoon.fun
-
-QQ：MzQ1Mzg2MzQ5Mg==
+<div class="home-contact">
+  <a href="https://github.com/kmoonn" target="_blank" rel="noopener" class="home-contact-link" aria-label="GitHub">
+    <img src="https://cdn.kmoon.fun/github.svg" width="20" height="20" alt="">
+    <span>kmoonn</span>
+  </a>
+  <a href="mailto:hs@kmoon.fun" class="home-contact-link" aria-label="Email">
+    <img src="https://cdn.kmoon.fun/%E9%82%AE%E7%AE%B1.svg" width="20" height="20" alt="">
+    <span>hs@kmoon.fun</span>
+  </a>
+  <span class="home-contact-link" aria-label="QQ">
+    <img src="https://cdn.kmoon.fun/QQ.svg" width="20" height="20" alt="">
+    <span>3453863492</span>
+  </span>
+</div>
