@@ -7,7 +7,7 @@ menu = "main"
 
 A small map of places I return to, things I build, and people I am glad to know online.
 
-If you'd like to exchange links, feel free to reach out.
+If you'd like to exchange links, feel free to reach out. Please submit [this](https://my.feishu.cn/share/base/form/shrcnBEu9mmLeio3pbLasFJCH2b)!
 
 <section class="links-section">
   <div class="links-section-header">
@@ -79,7 +79,7 @@ If you'd like to exchange links, feel free to reach out.
   </div>
   <div class="links-grid links-grid--friends">
     <a href="https://blog.hazenix.top" target="_blank" rel="noopener" class="link-card">
-      <img src="https://serv.xbottle.top/i/https://raw.githubusercontent.com/SomeBottle/somebottle/master/sticker/cut_the_potato.gif" class="link-avatar link-avatar--cover" loading="lazy">
+      <img src="https://raw.githubusercontent.com/SomeBottle/somebottle/master/sticker/cut_the_potato.gif" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
         <span class="link-domain">bottle.moe</span>
         <span class="link-name">些瓶的小站</span>
