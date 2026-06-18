@@ -962,4 +962,193 @@
         padding-top: 1.5rem;
         border-top: 1px solid var(--border-color);
     }
+
+    /* ===== about 页太阳系动画 (scope: .solar-hero) ===== */
+    .solar-hero {
+        position: relative;
+        width: 100%;
+        max-width: var(--width-max);
+        height: 180px;
+        margin: 0 auto 24px;
+        overflow: hidden;
+        border-radius: 16px;
+        background: var(--bg-color-primary);
+        perspective: 5000px;
+        perspective-origin: 33% 50%;
+    }
+    .solar-system {
+        position: absolute;
+        top: 41%;
+        left: 33%;
+        width: 1100px;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.55);
+        transform-style: preserve-3d;
+        animation: solarFadeIn 0.8s ease 0.1s forwards;
+    }
+    .solar-system > div {
+        position: relative;
+        margin: 0 auto;
+        transform-style: preserve-3d;
+        height: 0px;
+    }
+    .sun {
+        width: 250px;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        height: 125px !important;
+    }
+    .sun .star {
+        width: 150px;
+        height: 150px;
+        background: url("https://cdn.kmoon.fun/sun.png") no-repeat;
+        background-size: cover;
+        border-radius: 250px;
+        margin: 0 auto;
+        animation: spinsun 40s infinite linear;
+    }
+    .planet {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        animation-iteration-count: infinite;
+        overflow: hidden;
+    }
+    .avatar-planet {
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+    .shadow {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background: transparent url("https://cdn.kmoon.fun/shadow.png") 0% 0% no-repeat;
+        background-size: cover;
+        border-radius: 100%;
+    }
+    .mercury {
+        position: absolute;
+        width: 300px;
+        z-index: 2;
+        animation: orbitmercury 12s infinite linear;
+        top: -7.5px;
+    }
+    .mercury .planet {
+        width: 25px;
+        height: 25px;
+        background-image: url("https://cdn.kmoon.fun/mercury.png");
+        animation: anti-spin 12s infinite linear;
+    }
+    .mercury .shadow { animation: shadow 12s infinite linear; }
+    .venus {
+        position: absolute;
+        width: 506px;
+        z-index: 3;
+        animation: orbitvenus 15s infinite linear;
+        top: -19px;
+    }
+    .venus .planet {
+        width: 48px;
+        height: 48px;
+        background-image: url("https://cdn.kmoon.fun/venus.png");
+        animation: anti-spin 15s infinite linear;
+    }
+    .venus .shadow { animation: shadow 15s infinite linear; }
+    .earth {
+        position: absolute;
+        width: 610px;
+        z-index: 4;
+        animation: orbitearth 20s infinite linear;
+        top: -20px;
+    }
+    .earth .planet {
+        width: 50px;
+        height: 50px;
+        background-image: url("https://cdn.kmoon.fun/earth.png");
+        animation: anti-spin 20s infinite linear;
+    }
+    .earth .shadow { animation: shadow 20s infinite linear; }
+    .mars {
+        position: absolute;
+        width: 706px;
+        z-index: 5;
+        animation: orbitmars 30s infinite linear;
+        top: -11px;
+    }
+    .mars .planet {
+        width: 32px;
+        height: 32px;
+        background-image: url("https://cdn.kmoon.fun/mars.png");
+        animation: anti-spin 30s infinite linear;
+    }
+    .mars .shadow { animation: shadow 30s infinite linear; }
+    .jupiter {
+        position: absolute;
+        width: 1100px;
+        z-index: 6;
+        animation: orbitjupiter 50s infinite linear;
+        top: -64px;
+    }
+    .jupiter .planet {
+        width: 110px;
+        height: 110px;
+        background-image: url("https://cdn.kmoon.fun/jupiter.png");
+        animation: anti-spin 50s infinite linear;
+    }
+    .jupiter .shadow { animation: shadow 50s infinite linear; }
+    .avatar1 {
+        position: absolute;
+        width: 430px;
+        z-index: 7;
+        animation: orbitAvatar1 22s infinite linear;
+        top: -30px;
+    }
+    .avatar1 .planet {
+        width: 44px;
+        height: 44px;
+        animation: anti-spin 22s infinite linear;
+    }
+    .avatar1 .shadow { animation: shadow 22s infinite linear; }
+    .avatar2 {
+        position: absolute;
+        width: 860px;
+        z-index: 8;
+        animation: orbitAvatar2 38s infinite linear;
+        top: -52px;
+    }
+    .avatar2 .planet {
+        width: 58px;
+        height: 58px;
+        animation: anti-spin 38s infinite linear;
+    }
+    .avatar2 .shadow { animation: shadow 38s infinite linear; }
+
+    @keyframes solarFadeIn { to { opacity: 1; } }
+
+    @keyframes spinsun { 0% { transform: rotate(0); } 100% { transform: rotate(-360deg); } }
+
+    @keyframes shadow { 0% { background-position: 130% 0%; } 33% { background-position: 50% 0%; } 55% { background-position: 0% 0%; } 80% { background-position: -50% 0%; } 100% { background-position: -50% 0%; } }
+
+    @keyframes orbitmercury { 0% { z-index: 2; transform: rotateY(0); } 49% { z-index: 2; } 50% { z-index: -2; } 99% { z-index: -2; } 100% { z-index: 2; transform: rotateY(360deg); } }
+
+    @keyframes orbitvenus { 0% { z-index: 3; transform: rotateY(0); } 49% { z-index: 3; } 50% { z-index: -3; } 99% { z-index: -3; } 100% { z-index: 3; transform: rotateY(360deg); } }
+
+    @keyframes orbitearth { 0% { z-index: 4; transform: rotateY(0); } 49% { z-index: 4; } 50% { z-index: -4; } 99% { z-index: -4; } 100% { z-index: 4; transform: rotateY(360deg); } }
+
+    @keyframes orbitmars { 0% { z-index: 5; transform: rotateY(0); } 49% { z-index: 5; } 50% { z-index: -5; } 99% { z-index: -5; } 100% { z-index: 5; transform: rotateY(360deg); } }
+
+    @keyframes orbitjupiter { 0% { z-index: 6; transform: rotateY(270); } 49% { z-index: 6; } 50% { z-index: -6; } 99% { z-index: -6; } 100% { z-index: 6; transform: rotateY(360deg); } }
+
+    @keyframes orbitAvatar1 { 0% { z-index: 7; transform: rotateY(0); } 49% { z-index: 7; } 50% { z-index: -7; } 99% { z-index: -7; } 100% { z-index: 7; transform: rotateY(360deg); } }
+
+    @keyframes orbitAvatar2 { 0% { z-index: 8; transform: rotateY(0); } 49% { z-index: 8; } 50% { z-index: -8; } 99% { z-index: -8; } 100% { z-index: 8; transform: rotateY(360deg); } }
+
+    @keyframes anti-spin { from { transform: rotateY(0); } to { transform: rotateY(-360deg); } }
 </style>

@@ -106,6 +106,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
   </div>
+  </br>
 </section>
 
 <style>
