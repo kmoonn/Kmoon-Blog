@@ -4,7 +4,9 @@ menu = "main"
 weight = 1
 +++
 
-![](/images/flowers.gif)
+![](/images/flowers.gif) 
+
+[🚇 Travelling](https://www.travellings.cn/go.html)
 
 ## 👋 Hi, this is Hushan. You can call me kmoon
 

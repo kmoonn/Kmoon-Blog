@@ -78,7 +78,16 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
     <p class="links-section-kicker">Friends on the web</p>
   </div>
   <div class="links-grid links-grid--friends">
-    <a href="https://blog.hazenix.top" target="_blank" rel="noopener" class="link-card">
+    <a href="https://blog.zhilu.site/" target="_blank" rel="noopener" class="link-card">
+      <img src="https://www.zhilu.site/api/avatar.png" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">zhilu.site</span>
+        <span class="link-name">纸鹿摸鱼处</span>
+        <span class="link-desc">纸鹿至麓不知路</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="https://imbottle.com/" target="_blank" rel="noopener" class="link-card">
       <img src="https://raw.githubusercontent.com/SomeBottle/somebottle/master/sticker/cut_the_potato.gif" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
         <span class="link-domain">bottle.moe</span>
