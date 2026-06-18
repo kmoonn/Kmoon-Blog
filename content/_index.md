@@ -24,11 +24,11 @@ This page is still under construction. Thanks for stopping by.
 
 **“All in Three”**
 
-1️⃣ Interning at [ByteDance](https://bytedance.com) in Shanghai.
+💼 Interning at [ByteDance](https://bytedance.com) in Shanghai.
 
-2️⃣ Working on my master's thesis, with a current focus on [CKEdit](https://github.com/kmoonn/CKEdit/blob/main/paper/main.md).
+🔭 Working on my master's thesis, with a current focus on [CKEdit](https://github.com/kmoonn/CKEdit/blob/main/paper/main.md).
 
-3️⃣ [Preparing](https://my.feishu.cn/wiki/OVSGwAyleiAMLLkDpIqc3iFtnFg?from=from_copylink) for the 2027 fall campus recruitment season.
+🌱 [Preparing](https://my.feishu.cn/wiki/OVSGwAyleiAMLLkDpIqc3iFtnFg?from=from_copylink) for the 2027 fall campus recruitment season.
 
 **📫 How to Reach Me**
 

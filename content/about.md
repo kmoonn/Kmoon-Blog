@@ -29,3 +29,5 @@ Education: whut ——> whut.
 Intern: <img src="https://cdn.kmoon.fun/iflytek.svg" width="18" height="18" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="iFlytek">iFlytek ——> <img src="https://cdn.kmoon.fun/%E5%BF%AB%E6%89%8B.svg" width="18" height="18" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="Kuaishou">Kuaishou ——> <img src="https://cdn.kmoon.fun/bytedance.svg" width="18" height="18" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="ByteDance">ByteDance.
 
 Skills: Python、Java.
+
+[![Kmoon's GitHub stats](https://github-readme-stats.vercel.app/api?username=kmoonn&count_private=true&show_icons=true&theme=holi&hide_border=true)](https://github.com/kmoonn)
