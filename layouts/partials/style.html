@@ -4,6 +4,7 @@
         --width-max: 720px;
         --font-primary: Verdana, sans-serif;
         --font-secondary: monospace;
+        --font-title: 'LXGW WenKai', serif;
         --font-size-primary: 1em;
         --font-size-secondary: 0.8em;
         --bg-color-primary: #fdfdfd;
@@ -188,6 +189,10 @@
 
     i {
         font-style: normal;
+    }
+
+    .blog-post-item time {
+        color: var(--link-color);
     }
 
     time {
@@ -707,8 +712,24 @@
         flex: 0 0 80px;
     }
 
+    .blog-post-link {
+        font-family: var(--font-title);
+        font-size: 1.05em;
+        color: var(--text-color-primary);
+        transition: color 0.2s ease;
+    }
+
+    .blog-post-link:hover {
+        color: var(--link-color);
+        text-decoration: none;
+    }
+
     .blog-post-link:visited {
-        color: var(--link-visited-color);
+        color: var(--text-color-secondary);
+    }
+
+    .blog-post-link:visited:hover {
+        color: var(--link-color);
     }
 
     /* TOC */
