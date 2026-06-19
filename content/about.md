@@ -28,7 +28,7 @@ MBTI: ESTJ（良好秩序乃万物之基）.
 
 Education: whut 👉 whut.
 
-Intern: <img src="https://cdn.kmoon.fun/iflytek.svg" width="18" height="18" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="iFlytek"> iFlytek 👉 <img src="https://cdn.kmoon.fun/%E5%BF%AB%E6%89%8B.svg" width="18" height="18" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="Kuaishou"> Kuaishou 👉 <img src="https://cdn.kmoon.fun/bytedance.svg" width="18" height="18" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="ByteDance"> ByteDance.
+Intern: <img src="https://cdn.kmoon.fun/iflytek.svg" width="36" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="iFlytek"> iFlytek 👉 <img src="https://cdn.kmoon.fun/%E5%BF%AB%E6%89%8B.svg" width="20" height="20" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="Kuaishou"> Kuaishou 👉 <img src="https://cdn.kmoon.fun/bytedance.svg" width="20" height="20" style="border:none;display:inline;vertical-align:middle;border-radius:0" alt="ByteDance"> ByteDance.
 
 Skills: Python、Java.
 

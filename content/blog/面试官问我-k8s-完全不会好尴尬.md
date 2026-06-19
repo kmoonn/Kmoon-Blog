@@ -49,3 +49,6 @@ Pod 是 Kubernetes 中的最小调度单元，一个 Pod 可由多个容器（Co
 ## Kubectl
 
 k8s 为我们准备的一个命令行工具，可以通过命令去调用 API Server 提供的 API 服务。
+
+<img src="https://cdn.kmoon.fun/2026/2026-06-19T12-21-39-892Z.png" alt="" width=500/>
+
