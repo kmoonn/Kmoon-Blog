@@ -32,4 +32,4 @@ Intern: <img src="https://cdn.kmoon.fun/iflytek.svg" width="18" height="18" styl
 
 Skills: Python、Java.
 
-Future: YoutyTry.com
+Future: YouthTry.com

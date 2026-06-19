@@ -49,30 +49,6 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   </div>
 </section>
 
-<!-- <section class="links-section">
-  <div class="links-section-header">
-    <p class="links-section-kicker">Things I build</p>
-  </div>
-  <div class="links-grid links-grid--works">
-    <a href="/" class="link-card">
-      <img src="https://cdn.kmoon.fun/profile.jpeg" class="link-avatar link-avatar--cover" loading="lazy">
-      <div class="link-info">
-        <span class="link-domain">this site</span>
-        <span class="link-name">Kmoon's Blog</span>
-      </div>
-      <span class="link-arrow" aria-hidden="true">↗</span>
-    </a>
-    <a href="https://github.com/kmoonn/zhlgd-cli" class="link-card">
-      <img src="https://github.githubassets.com/favicons/favicon.svg" class="link-avatar link-avatar--cover" loading="lazy">
-      <div class="link-info">
-        <span class="link-domain">zhlgd CLI</span>
-        <span class="link-name">zhlgd-cli</span>
-      </div>
-      <span class="link-arrow" aria-hidden="true">↗</span>
-    </a>
-  </div>
-</section> -->
-
 <section class="links-section">
   <div class="links-section-header">
     <p class="links-section-kicker">Friends on the web</p>
@@ -131,9 +107,6 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   --link-card-paper: #fbfcfe;
   --link-card-muted: #5b6675;
   --link-card-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
-  --link-card-stripe-a: #5d8cc6;
-  --link-card-stripe-b: #cb7e60;
-  --link-card-stripe-c: #d8b45a;
   display: grid;
   gap: 12px;
   margin: 0;
@@ -143,18 +116,6 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
 .links-grid--works,
 .links-grid--friends {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.links-grid--works {
-  --link-card-stripe-a: #7a8f68;
-  --link-card-stripe-b: #5d8cc6;
-  --link-card-stripe-c: #c6a45d;
-}
-
-.links-grid--friends {
-  --link-card-stripe-a: #8b7ac8;
-  --link-card-stripe-b: #d28b72;
-  --link-card-stripe-c: #77a88d;
 }
 
 .link-card,
@@ -282,21 +243,6 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
   --link-card-paper: #151a22;
   --link-card-muted: #9ba8b8;
   --link-card-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
-  --link-card-stripe-a: #78aef3;
-  --link-card-stripe-b: #f09a78;
-  --link-card-stripe-c: #e0c36d;
-}
-
-[data-theme="dark"] .links-grid--works {
-  --link-card-stripe-a: #9fbc88;
-  --link-card-stripe-b: #78aef3;
-  --link-card-stripe-c: #e0c36d;
-}
-
-[data-theme="dark"] .links-grid--friends {
-  --link-card-stripe-a: #b7a0ff;
-  --link-card-stripe-b: #f3a184;
-  --link-card-stripe-c: #86c7a5;
 }
 
 [data-theme="dark"] .link-card:hover,
@@ -313,21 +259,6 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
     --link-card-paper: #151a22;
     --link-card-muted: #9ba8b8;
     --link-card-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
-    --link-card-stripe-a: #78aef3;
-    --link-card-stripe-b: #f09a78;
-    --link-card-stripe-c: #e0c36d;
-  }
-
-  :root:not([data-theme="light"]) .links-grid--works {
-    --link-card-stripe-a: #9fbc88;
-    --link-card-stripe-b: #78aef3;
-    --link-card-stripe-c: #e0c36d;
-  }
-
-  :root:not([data-theme="light"]) .links-grid--friends {
-    --link-card-stripe-a: #b7a0ff;
-    --link-card-stripe-b: #f3a184;
-    --link-card-stripe-c: #86c7a5;
   }
 
   :root:not([data-theme="light"]) .link-card:hover,
