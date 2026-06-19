@@ -76,7 +76,7 @@
               </time>
             </i>
           </span>
-          <a class="blog-post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+          <a class="blog-post-link" href="{{ .Permalink }}">{{ .Title }}{{ if eq .Params.status "landing" }}<span class="loading-icon" aria-label="撰写中"></span>{{ end }}</a>
         </li>
         {{ end }}
       </ul>
@@ -97,7 +97,7 @@
           </time>
         </i>
       </span>
-      <a class="blog-post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+      <a class="blog-post-link" href="{{ .Permalink }}">{{ .Title }}{{ if eq .Params.status "landing" }}<span class="loading-icon" aria-label="撰写中"></span>{{ end }}</a>
     </li>
     {{ else }}
     <li>No posts yet</li>

@@ -301,6 +301,24 @@
         100% { background-position: 300% 50%; }
     }
 
+    .loading-icon {
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        margin-left: 0.3em;
+        vertical-align: baseline;
+        position: relative;
+        top: 0.05em;
+        border: 2px solid currentColor;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
     .theme-toggle,
     button.upvote-btn {
         padding: 0;

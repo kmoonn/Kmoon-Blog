@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $showArticleHeader := and (not .Params.menu) (or (eq .Type "blog") (eq .Type "essay")) }}
 {{ if $showArticleHeader }}
-<h1>{{ .Title }}</h1>
+<h1>{{ .Title }}{{ if eq .Params.status "landing" }}<span class="loading-icon" aria-label="撰写中"></span>{{ end }}</h1>
 {{ if .Date }}
 <p>
   <i>
