@@ -97,7 +97,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
     <a href="https://blog.hazenix.top" target="_blank" rel="noopener" class="link-card">
-      <img src="https://blog.hazenix.top/assets/avatar-C7oPo7sC.jpg" class="link-avatar link-avatar--cover" loading="lazy">
+      <img src="https://blog.hazenix.top/avatar.webp" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
         <span class="link-domain">blog.hazenix.top</span>
         <span class="link-name">Hazenix's Blog</span>
