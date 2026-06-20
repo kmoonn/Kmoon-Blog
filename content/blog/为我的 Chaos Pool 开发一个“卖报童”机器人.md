@@ -1,7 +1,8 @@
 +++
 title = "为我的 Chaos Pool 开发一个“卖报童”机器人"
 date = "2026-06-16T13:14:34+08:00"
-tags = ["feishu","bot"]
+tags = ["feishu","Bot"]
+status = "landing"
 +++
 
 ## 背景

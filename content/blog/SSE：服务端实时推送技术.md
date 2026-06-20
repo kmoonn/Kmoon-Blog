@@ -1,5 +1,5 @@
 +++
-title = "SSE: 服务端实时推送技术"
+title = "SSE：服务端实时推送技术"
 date = "2025-11-06T17:15:20+08:00"
 tags = ["SSE", "Go"]
 description = "Server-Sent Events 的工作原理、与 WebSocket 的对比，以及如何用 Go 实现一个支持断线重连的生产级 SSE 服务。"

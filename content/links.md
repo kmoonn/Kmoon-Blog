@@ -30,7 +30,7 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
       </div>
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
-    <a href="https://github.com/trending" target="_blank" rel="noopener" class="link-card">
+    <a href="https://www.v2ex.com" target="_blank" rel="noopener" class="link-card">
       <img src="https://www.v2ex.com/static/favicon.ico" class="link-avatar" loading="lazy">
       <div class="link-info">
         <span class="link-domain">www.v2ex.com</span>
@@ -43,6 +43,14 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
       <div class="link-info">
         <span class="link-domain">space.bilibili.com</span>
         <span class="link-name">马克的技术工作坊</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="https://testerhome.com" target="_blank" rel="noopener" class="link-card">
+      <img src="https://testerhome.com/photo/favicon.png" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">testerhome.com</span>
+        <span class="link-name">TesterHome</span>
       </div>
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>

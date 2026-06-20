@@ -1,5 +1,5 @@
 +++
-title = "Fine Tuning: 大模型世界的特长班"
+title = "Fine Tuning：大模型世界的特长班"
 date = "2026-05-09T21:41:34+08:00"
 tags = ["LLM","Fine Tuning",]
 status = "landing"
