@@ -38,6 +38,14 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
       </div>
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
+    <a href="https://space.bilibili.com/316183842" target="_blank" rel="noopener" class="link-card">
+      <img src="https://cdn.kmoon.fun/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9.png" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">space.bilibili.com</span>
+        <span class="link-name">技术爬爬虾</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
     <a href="https://space.bilibili.com/1815948385" target="_blank" rel="noopener" class="link-card">
       <img src="https://cdn.kmoon.fun/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9.png" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
