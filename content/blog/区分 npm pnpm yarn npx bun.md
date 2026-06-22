@@ -1,5 +1,5 @@
 +++
-title = "区分 Npm、pnpm、yarn、npx、bun"
+title = "区分 npm、pnpm、yarn、npx、bun"
 date = "2024-06-22T15:56:44+08:00"
 tags = ["JavaScript", "Node.js", "包管理器", "前端工具"]
 +++
