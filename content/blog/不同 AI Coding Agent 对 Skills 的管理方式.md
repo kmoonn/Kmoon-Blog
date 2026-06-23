@@ -18,8 +18,6 @@ Claude Code 的 skill 是本地 Markdown 文件，Cursor IDE 的 skill 藏在设
 
 咱们一个个拆开了聊。
 
-## 存放路径
-
 先从 CLI 工具说起。
 
 Claude Code 是最直白的。它就放在项目目录下的 `.claude/skills/` 文件夹里，每个 skill 是一个子文件夹，里面必须有一个 `skill.md` 文件。

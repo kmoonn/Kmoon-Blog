@@ -1,8 +1,8 @@
 +++
 title = "zhlgd-cli：尝试做一个 CLI"
 date = "2026-06-07T17:01:02+08:00"
-description = "记录我从 0 开始为智慧理工大尝试做一个 Node.js CLI 的过程，包括项目初始化、commander、登录鉴权，以及 msg / news 两个子命令。"
 tags = ["CLI"]
+description = "记录我从 0 开始为智慧理工大尝试做一个 Node.js CLI 的过程，包括项目初始化、commander、登录鉴权，以及 msg / news 两个子命令。"
 +++
 
 一直觉得在命令行里敲命令然后回车，有一种莫名的爽感，特别是当黑框里返回自己想要的东西的时候。

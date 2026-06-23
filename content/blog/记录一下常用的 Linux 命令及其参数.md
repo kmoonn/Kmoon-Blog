@@ -2,6 +2,7 @@
 title = "记录一下常用的 Linux 命令及其参数"
 date = "2025-03-18T20:44:37+08:00"
 tags = ["Linux"]
+status = "landing"
 +++
 
 * [linux-command](https://github.com/jaywcjlove/linux-command)
@@ -115,8 +116,6 @@ ping IP 地址（ipv4）
 在命令模式下，执行存盘退出操作
 
 ## unzip 解压缩由zip命令压缩的压缩包
-
-
 
 ## zip 压缩文件
 

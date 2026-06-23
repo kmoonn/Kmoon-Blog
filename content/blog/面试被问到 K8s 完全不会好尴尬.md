@@ -2,6 +2,7 @@
 title = "面试被问到 K8s 完全不会好尴尬"
 date = "2026-04-05T21:45:40+08:00"
 tags = ["Kubernetes","K8s"]
+status = "landing"
 +++
 
 > Reference: 

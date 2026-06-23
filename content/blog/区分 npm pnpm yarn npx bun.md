@@ -4,8 +4,6 @@ date = "2024-06-22T15:56:44+08:00"
 tags = ["JavaScript", "Node.js", "包管理器", "前端工具"]
 +++
 
-故事是这样的。
-
 上个月我想跑一个开源项目，在 GitHub 上搜了个 star 数挺多的 admin 后台模板，clone 下来，按照 README 写的 npm install。
 
 结果报错，满屏的红字。
