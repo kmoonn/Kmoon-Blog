@@ -70,6 +70,15 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
     <p class="links-section-kicker">Friends on the web</p>
   </div>
   <div class="links-grid links-grid--friends">
+    <a href="https://blog.pdjjq.org/" target="_blank" rel="noopener" class="link-card">
+      <img src="https://blog.pdjjq.org//images/apple-touch-icon.png" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">blog.pdjjq.org</span>
+        <span class="link-name">DJJ</span>
+        <span class="link-desc">反抗吧，朋友！</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
     <a href="https://blog.zhilu.site/" target="_blank" rel="noopener" class="link-card">
       <img src="https://www.zhilu.site/api/avatar.png" class="link-avatar link-avatar--cover" loading="lazy">
       <div class="link-info">
@@ -94,6 +103,15 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
         <span class="link-domain">blog.hazenix.top</span>
         <span class="link-name">Hazenix's Blog</span>
         <span class="link-desc">我会一直走，走到灯火通明。</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a href="https://feeshy.top" target="_blank" rel="noopener" class="link-card">
+      <img src="https://feeshy.top/favicon.svg" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">feeshy.top</span>
+        <span class="link-name">浮鲜</span>
+        <span class="link-desc">feeshy的多元兴趣探索记录</span>
       </div>
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
