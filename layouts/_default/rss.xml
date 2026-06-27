@@ -20,6 +20,7 @@
 {{- else }}
   {{- $pages = $pctx.Pages }}
 {{- end }}
+{{- $pages = where $pages "Params.hidden" "!=" true }}
 {{- with site.Params.RSS.pageLimit }}
   {{- if ge . 1 }}
     {{- $pages = $pages | first . }}
