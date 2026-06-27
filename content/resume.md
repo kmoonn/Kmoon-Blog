@@ -3,6 +3,7 @@ title = "Resume"
 date = "2026-06-05T21:23:36+08:00"
 menu = "main"
 weight = 103
+menuHidden = true
 +++
 
 This page is a short landing page for my latest resume.
