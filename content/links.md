@@ -1,7 +1,7 @@
 +++
 title = "Links"
 date = "2026-06-17T17:08:16+08:00"
-weight = 102
+weight = 103
 menu = "main"
 +++
 
@@ -14,6 +14,14 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
     <p class="links-section-kicker">Regular reads</p>
   </div>
   <div class="links-grid links-grid--reads">
+    <a href="https://www.hellogithub.com/" target="_blank" rel="noopener" class="link-card">
+      <img src="https://www.hellogithub.com/favicon.ico" class="link-avatar" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">hellogithub.com</span>
+        <span class="link-name">Hello Github 月刊</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
     <a href="https://www.ruanyifeng.com/blog/" target="_blank" rel="noopener" class="link-card">
       <img src="https://www.ruanyifeng.com/favicon.ico" class="link-avatar" loading="lazy">
       <div class="link-info">

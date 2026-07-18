@@ -2,7 +2,7 @@
 title = "About"
 date = "2026-06-05T21:25:11+08:00"
 menu = "main"
-weight = 104
+weight = 105
 +++
 
 <div class="solar-hero">
