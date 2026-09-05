@@ -123,6 +123,15 @@ If you'd like to exchange links, feel free to reach out. Please submit [this](ht
       </div>
       <span class="link-arrow" aria-hidden="true">↗</span>
     </a>
+    <a href="https://blog.movcloud.xyz" target="_blank" rel="noopener" class="link-card">
+      <img src="https://blog.movcloud.xyz/logo.jpg" class="link-avatar link-avatar--cover" loading="lazy">
+      <div class="link-info">
+        <span class="link-domain">blog.movcloud.xyz</span>
+        <span class="link-name">Sanmussh Blog</span>
+        <span class="link-desc">一个喜欢二次元的博主日常记录</span>
+      </div>
+      <span class="link-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
   </br>
 </section>
